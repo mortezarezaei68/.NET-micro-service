@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "vtpyj0KSL4ejF8ZE5eXj5n9oIKv82SxAWHw4kMi2IwCj5pqkzI+/O2DElRQpHJTHW1iNg9VmS3qDdJC7RQS0cg==",
+  "success": true,
+  "projectFilePath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Queries/Framework.Queries.csproj",
+  "expectedPackageFiles": [
+    "/home/morteza/.nuget/packages/mediatr/10.0.1/mediatr.10.0.1.nupkg.sha512",
+    "/home/morteza/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
+    "/home/morteza/.nuget/packages/microsoft.extensions.logging.abstractions/5.0.0/microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

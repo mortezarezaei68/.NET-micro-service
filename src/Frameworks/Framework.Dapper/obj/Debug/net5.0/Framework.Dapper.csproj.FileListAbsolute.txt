@@ -1,0 +1,12 @@
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/bin/Debug/net5.0/Framework.Dapper.deps.json
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/bin/Debug/net5.0/Framework.Dapper.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/bin/Debug/net5.0/Framework.Dapper.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/Debug/net5.0/Framework.Dapper.csproj.AssemblyReference.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/Debug/net5.0/Framework.Dapper.GeneratedMSBuildEditorConfig.editorconfig
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/Debug/net5.0/Framework.Dapper.AssemblyInfoInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/Debug/net5.0/Framework.Dapper.AssemblyInfo.cs
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/Debug/net5.0/Framework.Dapper.csproj.CoreCompileInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/Debug/net5.0/Framework.Dapper.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/Debug/net5.0/ref/Framework.Dapper.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/Debug/net5.0/Framework.Dapper.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/Debug/net5.0/refint/Framework.Dapper.dll

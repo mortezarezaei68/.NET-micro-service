@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/Framework.Dapper.csproj": {}
+  },
+  "projects": {
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/Framework.Dapper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/Framework.Dapper.csproj",
+        "projectName": "Framework.Dapper",
+        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/Framework.Dapper.csproj",
+        "packagesPath": "/home/morteza/.nuget/packages/",
+        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Dapper/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/morteza/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[1.1.3, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

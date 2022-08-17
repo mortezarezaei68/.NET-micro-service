@@ -1,0 +1,15 @@
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/bin/Debug/net5.0/Framework.EventBase.deps.json
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/bin/Debug/net5.0/Framework.EventBase.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/bin/Debug/net5.0/ref/Framework.EventBase.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/bin/Debug/net5.0/Framework.EventBase.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/bin/Debug/net5.0/Framework.Domain.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/bin/Debug/net5.0/Framework.Domain.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/obj/Debug/net5.0/Framework.EventBase.csprojAssemblyReference.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/obj/Debug/net5.0/Framework.EventBase.GeneratedMSBuildEditorConfig.editorconfig
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/obj/Debug/net5.0/Framework.EventBase.AssemblyInfoInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/obj/Debug/net5.0/Framework.EventBase.AssemblyInfo.cs
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/obj/Debug/net5.0/Framework.EventBase.csproj.CoreCompileInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/obj/Debug/net5.0/Framework.EventBase.csproj.CopyComplete
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/obj/Debug/net5.0/Framework.EventBase.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/obj/Debug/net5.0/ref/Framework.EventBase.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.EventBase/obj/Debug/net5.0/Framework.EventBase.pdb

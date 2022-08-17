@@ -1,0 +1,63 @@
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Buses.deps.json
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/ref/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Buses.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Commands.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Domain.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Exception.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Queries.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Commands.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Domain.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Queries.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Exception.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.GeneratedMSBuildEditorConfig.editorconfig
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.AssemblyInfoInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.AssemblyInfo.cs
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.csproj.CoreCompileInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.csproj.CopyComplete
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/ref/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.csproj.AssemblyReference.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Buses.deps.json
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/ref/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Buses.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Commands.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Domain.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Exception.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Queries.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Commands.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Domain.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Queries.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Exception.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.csproj.AssemblyReference.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.GeneratedMSBuildEditorConfig.editorconfig
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.AssemblyInfoInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.AssemblyInfo.cs
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.csproj.CoreCompileInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.csproj.CopyComplete
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/ref/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Buses.deps.json
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Buses.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Commands.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Domain.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Exception.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Queries.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Commands.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Domain.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Queries.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/bin/Debug/net5.0/Framework.Exception.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.csproj.AssemblyReference.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.GeneratedMSBuildEditorConfig.editorconfig
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.AssemblyInfoInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.AssemblyInfo.cs
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.csproj.CoreCompileInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.csproj.CopyComplete
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/ref/Framework.Buses.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/Framework.Buses.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Buses/obj/Debug/net5.0/refint/Framework.Buses.dll

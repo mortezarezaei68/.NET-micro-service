@@ -1,0 +1,45 @@
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.CircuitBreakers.deps.json
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/ref/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.CircuitBreakers.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.Exception.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.Exception.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.GeneratedMSBuildEditorConfig.editorconfig
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.AssemblyInfoInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.AssemblyInfo.cs
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.csproj.CoreCompileInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.csproj.CopyComplete
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/ref/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.csproj.AssemblyReference.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.CircuitBreakers.deps.json
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/ref/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.CircuitBreakers.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.Exception.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.Exception.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.csproj.AssemblyReference.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.GeneratedMSBuildEditorConfig.editorconfig
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.AssemblyInfoInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.AssemblyInfo.cs
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.csproj.CoreCompileInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.csproj.CopyComplete
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/ref/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/HalfMile/HalfMile/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.CircuitBreakers.deps.json
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.CircuitBreakers.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.Exception.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/bin/Debug/net5.0/Framework.Exception.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.csproj.AssemblyReference.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.GeneratedMSBuildEditorConfig.editorconfig
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.AssemblyInfoInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.AssemblyInfo.cs
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.csproj.CoreCompileInputs.cache
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.csproj.CopyComplete
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/ref/Framework.CircuitBreakers.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/Framework.CircuitBreakers.pdb
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.CircuitBreakers/obj/Debug/net5.0/refint/Framework.CircuitBreakers.dll
