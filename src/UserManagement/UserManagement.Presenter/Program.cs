@@ -1,10 +1,14 @@
+using Framework.Buses;
 using UserManagement.Core.ServiceExtensions;
+using UserManagement.Core.UserManagementContextConcept;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddTransient<ICapEventBus, CapEventBus>();
 builder.Services.AddControllersWithViews();
 builder.Services.ContextInjection(builder.Configuration);
+builder.Services.AddCapConfigureServices<UserManagementContext>(builder.Configuration);
 
 var app = builder.Build();
 

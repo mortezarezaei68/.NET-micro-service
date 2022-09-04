@@ -2037,11 +2037,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/UserManagement.Core.csproj",
+      "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/UserManagement.Core.csproj",
       "projectName": "UserManagement.Core",
-      "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/UserManagement.Core.csproj",
+      "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/UserManagement.Core.csproj",
       "packagesPath": "/home/morteza/.nuget/packages/",
-      "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/obj/",
+      "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/morteza/.nuget/NuGet/NuGet.Config"
@@ -2056,11 +2056,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj": {
-              "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj"
+            "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj": {
+              "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj"
             },
-            "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj": {
-              "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj"
+            "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj": {
+              "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj"
             }
           }
         }

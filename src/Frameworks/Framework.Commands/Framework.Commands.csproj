@@ -7,15 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MediatR" Version="10.0.1"/>
-        <PackageReference Include="Newtonsoft.Json" Version="12.0.2"/>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0"/>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5"/>
+        <PackageReference Include="MediatR" Version="10.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+        <PackageReference Include="DotNetCore.CAP" Version="6.1.0" />
+        <PackageReference Include="DotNetCore.CAP.Kafka" Version="6.1.0" />
+        <PackageReference Include="DotNetCore.CAP.SqlServer" Version="6.1.0" />
+        <PackageReference Include="DotNetCore.CAP.Dashboard" Version="6.1.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj"/>
-        <ProjectReference Include="..\Framework.Exception\Framework.Exception.csproj"/>
+        <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj" />
+        <ProjectReference Include="..\Framework.Exception\Framework.Exception.csproj" />
     </ItemGroup>
 
 </Project>

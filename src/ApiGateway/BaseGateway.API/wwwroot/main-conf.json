@@ -1,0 +1,34 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/TestMobile/v1/GET",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7241
+        }
+      ],
+      "UpstreamPathTemplate": "/Test",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "SwaggerKey": "contacts"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "localhost:9500"
+  },
+  "SwaggerEndPoints": [
+    {
+      "Key": "contacts",
+      "Config": [
+        {
+          "Name": "Contacts API",
+          "Version": "v1",
+          "Url": "https://localhost:7080/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

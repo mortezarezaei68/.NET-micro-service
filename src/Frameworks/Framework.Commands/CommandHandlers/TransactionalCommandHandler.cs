@@ -5,12 +5,12 @@ using Framework.Domain.UnitOfWork;
 
 namespace Framework.Commands.CommandHandlers
 {
-    public class TransactionalCommandHandler<TCommand> : ICommandHandler<TCommand>
+    public abstract class TransactionalCommandHandler<TCommand> : ICommandHandler<TCommand>
     {
         private readonly ICommandHandler<TCommand> _commandHandler;
         private readonly IUnitOfWork _unitOfWork;
 
-        public TransactionalCommandHandler(ICommandHandler<TCommand> commandHandler, IUnitOfWork unitOfWork)
+        protected TransactionalCommandHandler(ICommandHandler<TCommand> commandHandler, IUnitOfWork unitOfWork)
         {
             _commandHandler = commandHandler;
             _unitOfWork = unitOfWork;

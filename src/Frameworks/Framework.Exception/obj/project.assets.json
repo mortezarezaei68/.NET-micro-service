@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj",
+      "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj",
       "projectName": "Framework.Exception",
-      "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj",
+      "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj",
       "packagesPath": "/home/morteza/.nuget/packages/",
-      "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/obj/",
+      "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/morteza/.nuget/NuGet/NuGet.Config"

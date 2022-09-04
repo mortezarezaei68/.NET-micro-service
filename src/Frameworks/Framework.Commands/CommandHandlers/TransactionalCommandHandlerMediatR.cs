@@ -24,18 +24,13 @@ namespace Framework.Commands.CommandHandlers
         public async Task<TResponse> Handle(TCommand request, CancellationToken cancellationToken,
             RequestHandlerDelegate<TResponse> next)
         {
-            var response = default(TResponse);
-
             try
             {
                 if (_unitOfWork.HasActiveTransaction) return await next();
-                using (var transaction = await _unitOfWork.BeginTransactionAsync())
-                {
-                  
-                    response = await next();
-                    await _unitOfWork.CommitAsync(transaction);
-                    return response;
-                }
+                await using var transaction = await _unitOfWork.BeginTransactionAsync();
+                var response = await next();
+                await _unitOfWork.CommitAsync(transaction);
+                return response;
             }
             catch (AppException ex)
             {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vpQY05iHpobljPweAg/n1eRr6JBTICK01gHLJYkXU69n34zQyAICaMZfWvzOxG9iw5/Z1F22hyo2aWJuyS1Rjg==",
+  "dgSpecHash": "ZpLl5RilzaBI0olJDp6RtBu43my/j16yibZPB7eHZpt+RcxqB1NeTsjYp06kMhY6sJJHYawW4+LDU/COf5eZ6A==",
   "success": true,
-  "projectFilePath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/UserManagement.Core.csproj",
+  "projectFilePath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/UserManagement.Core.csproj",
   "expectedPackageFiles": [
     "/home/morteza/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/morteza/.nuget/packages/mediatr/10.0.1/mediatr.10.0.1.nupkg.sha512",

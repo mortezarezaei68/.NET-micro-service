@@ -581,11 +581,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj",
+      "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj",
       "projectName": "Framework.Domain",
-      "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj",
+      "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj",
       "packagesPath": "/home/morteza/.nuget/packages/",
-      "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/obj/",
+      "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/morteza/.nuget/NuGet/NuGet.Config"

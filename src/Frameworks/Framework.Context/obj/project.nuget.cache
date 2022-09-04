@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i5Gu/FUmG9+5JJ3/XI3yGqbRMsIghdF/9WTnqSBmNs9XXFRbp0UuQIP6yPPITTBm7vbbaeJ8I3iB7No+HrM1UA==",
+  "dgSpecHash": "xZDvh3mpSuN6mkl0DPjcbBWpDpY2Qq1xPdaKore1G4fXRBUyuqYW/wNUP+QBLTGBCzG6HHQmCYQq4+0Z9DzrNQ==",
   "success": true,
-  "projectFilePath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj",
+  "projectFilePath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj",
   "expectedPackageFiles": [
     "/home/morteza/.nuget/packages/mediatr/10.0.1/mediatr.10.0.1.nupkg.sha512",
     "/home/morteza/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",

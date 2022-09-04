@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o+wcrvuM3vy0GohYCI/H2U02luNHsWJQJbtp/89zdNinEkDwrU+kAp9z6ZzwcH75Xji+1P+/6YVhISNvliqEfg==",
+  "dgSpecHash": "vWj/oigpjd+F5VGlLYAAcWw8HroCj2bGvRYG1THjgr+hTI2RRBqpZZVyFbXaGYQuTahYdOGy4X6oAP3MqZPQWQ==",
   "success": true,
-  "projectFilePath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/Frameworks/Framework.Common/Framework.Common.csproj",
+  "projectFilePath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Common/Framework.Common.csproj",
   "expectedPackageFiles": [
     "/home/morteza/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
     "/home/morteza/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/9.0.0/mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",

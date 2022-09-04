@@ -7,13 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MediatR" Version="10.0.1"/>
+        <PackageReference Include="MediatR" Version="10.0.1" />
+        
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Framework.Commands\Framework.Commands.csproj"/>
-        <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj"/>
-        <ProjectReference Include="..\Framework.Queries\Framework.Queries.csproj"/>
+        <ProjectReference Include="..\Framework.Commands\Framework.Commands.csproj" />
+        <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj" />
+        <ProjectReference Include="..\Framework.Queries\Framework.Queries.csproj" />
     </ItemGroup>
 
 </Project>

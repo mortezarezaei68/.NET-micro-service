@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/UserManagement.API.csproj": {}
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/UserManagement.API.csproj": {}
   },
   "projects": {
-    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/UserManagement.API.csproj": {
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/UserManagement.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/UserManagement.API.csproj",
+        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/UserManagement.API.csproj",
         "projectName": "UserManagement.API",
-        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/UserManagement.API.csproj",
+        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/UserManagement.API.csproj",
         "packagesPath": "/home/morteza/.nuget/packages/",
-        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/obj/",
+        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/morteza/.nuget/NuGet/NuGet.Config"
