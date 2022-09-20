@@ -22,4 +22,13 @@
         <ProjectReference Include="..\Framework.Exception\Framework.Exception.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="MassTransit">
+        <HintPath>..\..\..\..\..\..\..\..\..\home\morteza\.nuget\packages\masstransit\8.0.6\lib\net6.0\MassTransit.dll</HintPath>
+      </Reference>
+      <Reference Include="MassTransit.Abstractions">
+        <HintPath>..\..\..\..\..\..\..\..\..\home\morteza\.nuget\packages\masstransit.abstractions\8.0.6\lib\net6.0\MassTransit.Abstractions.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

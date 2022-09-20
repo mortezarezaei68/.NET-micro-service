@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter
 build_property._RazorSourceGeneratorDebug = 
 
+[/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/Identity/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = SWRlbnRpdHkvUGFnZXMvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

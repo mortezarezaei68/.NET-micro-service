@@ -1,51 +1,34 @@
 ﻿using Framework.Domain.Core;
+using Microsoft.AspNetCore.Identity;
 
 namespace UserManagement.Core.Domains;
 
-public class User : AggregateRoot<int>
+public class User : IdentityUser<int>, IEntityAudit
 {
-    private readonly List<UserRole> _userRoles = new();
-    public IReadOnlyCollection<UserRole> UserRoles => _userRoles;
-
-    private readonly List<Clinic> _clinics = new();
-    public IReadOnlyCollection<Clinic> Clinics => _clinics;
+    // private readonly List<UserRole> _userRoles = new();
+    // public IReadOnlyCollection<UserRole> UserRoles => _userRoles;
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
     public UserType UserType { get; private set; }
 
     public UserGenderType GenderType { get; private set; }
 
-    public static User Add(UserGenderType genderType, string lastName, string firstName, UserType userType)
+    public static User Add(UserGenderType genderType, string lastName, string firstName, UserType userType,string userName)
     {
         return new User
         {
             GenderType = genderType,
             LastName = lastName,
             FirstName = firstName,
-            UserType = userType
+            UserType = userType,
+            UserName = userName
         };
     }
 
-    public void UpdateUserRole(IEnumerable<int> roleId)
-    {
-        var roles = roleId.Select(a => new UserRole(a)).ToList();
-        _userRoles.Update(roles);
-    }
-
-    public void AddClinic(string name, IEnumerable<ClinicAddressOption> clinicAddressOptions)
-    {
-        var clinicAddress = clinicAddressOptions.Select(a => new ClinicAddress(a.Address, a.Street));
-        _clinics.Add(new Clinic(name, clinicAddress));
-    }
-
-    public void UpdateClinic(int id, string name, IEnumerable<ClinicAddressOption> clinicAddressOptions)
-    {
-        var clinic = _clinics.FirstOrDefault(a => a.Id == id);
-        if (clinic is null)
-            throw new Exception("clinic is not exist");
-
-
-        var clinicAddress = clinicAddressOptions.Select(a => new ClinicAddress(a.Address, a.Street));
-        clinic.Update(name, clinicAddress);
-    }
+    public DateTime CreatedAt { get; set; }
+    public int CreatedBy { get; set; }
+    public DateTime UpdatedAt { get; set; }
+    public int UpdatedBy { get; set; }
+    public bool IsDeleted { get; set; }
+    public DateTime DeletedAt { get; set; }
 }

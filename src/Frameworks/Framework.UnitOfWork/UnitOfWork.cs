@@ -14,12 +14,10 @@ namespace Framework.UnitOfWork
     {
         private readonly TContext _context;
         private IDbContextTransaction _currentTransaction;
-        private readonly IEventBus _eventBus;
 
-        public UnitOfWork(TContext context, IEventBus eventBus)
+        public UnitOfWork(TContext context)
         {
             _context = context;
-            _eventBus = eventBus;
         }
 
         public bool HasActiveTransaction => _currentTransaction != null;
@@ -45,11 +43,11 @@ namespace Framework.UnitOfWork
 
             domainEntities.ToList()
                 .ForEach(entity => entity.Entity.ClearDomainEvents());
-            if (domainEvents.Any())
-            {
-                foreach (var domainEvent in domainEvents)
-                    await _eventBus.DomainEventDispatcher(domainEvent);
-            }
+            // if (domainEvents.Any())
+            // {
+            //     foreach (var domainEvent in domainEvents)
+            //         await _eventBus.DomainEventDispatcher(domainEvent);
+            // }
 
             var result = await _context.SaveChangesAsync(cancellationToken);
             return result;

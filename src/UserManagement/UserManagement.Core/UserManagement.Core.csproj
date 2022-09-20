@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Frameworks\Framework.Buses\Framework.Buses.csproj" />
       <ProjectReference Include="..\..\Frameworks\Framework.Context\Framework.Context.csproj" />
       <ProjectReference Include="..\..\Frameworks\Framework.Domain\Framework.Domain.csproj" />
     </ItemGroup>
@@ -23,6 +24,12 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="OpenIddict" Version="3.1.1" />
+        <PackageReference Include="OpenIddict.AspNetCore" Version="3.1.1" />
+        <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="3.1.1" />
+        <PackageReference Include="OpenIddict.Server" Version="3.1.1" />
+        <PackageReference Include="OpenIddict.Abstractions" Version="3.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
     </ItemGroup>
 
 </Project>
