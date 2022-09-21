@@ -11,32 +11,20 @@ namespace OrderManagement.Core;
 
 public class CreateOrderConsumer : IConsumer<CreateOrderConsumerRequest>
 {
-    private readonly IMediator _transactionalBus;
 
-    public CreateOrderConsumer(IMediator transactionalBus) 
-    {
-        _transactionalBus = transactionalBus;
-    }
 
-    public Task Consume(ConsumeContext<CreateOrderConsumerRequest> context)
+    public async Task Consume(ConsumeContext<CreateOrderConsumerRequest> context)
     {
-        _transactionalBus.Send(new UpdateOrderConsumerRequest
+        await context.Publish(new UpdateOrderConsumerRequest
         {
             Name = "test"
         });
-        return Task.FromResult(new CreateOrderConsumerResponse(true, ResultCode.Success));
     }
 }
 
-public class UpdateOrderConsumer : MassTransitTransactionalCommandHandler<UpdateOrderConsumerRequest,
-    UpdateOrderConsumerResponse>
+public class UpdateOrderConsumer : IConsumer<UpdateOrderConsumerRequest>
 {
-    public UpdateOrderConsumer(ITransactionalBus transactionalBus) : base(
-        transactionalBus)
-    {
-    }
-
-    public override Task<UpdateOrderConsumerResponse> Handle(UpdateOrderConsumerRequest command)
+    public Task Consume(ConsumeContext<UpdateOrderConsumerRequest> context)
     {
         return Task.FromResult(new UpdateOrderConsumerResponse(true, ResultCode.Success));
     }

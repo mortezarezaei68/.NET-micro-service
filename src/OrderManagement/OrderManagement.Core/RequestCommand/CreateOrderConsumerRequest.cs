@@ -6,6 +6,7 @@ namespace OrderManagement.Core.RequestCommand;
 public class CreateOrderConsumerRequest:
     RequestCommandData
 {
+    public Guid Id { get; set; }
     public string Name { get; set; }
 }
 
@@ -19,6 +20,7 @@ public class UpdateOrderConsumerRequest:
     RequestCommandData
 {
     public string Name { get; set; }
+    public Guid OrderId { get; set; }
 }
 public class UpdateOrderConsumerResponse:ResponseCommand
 {

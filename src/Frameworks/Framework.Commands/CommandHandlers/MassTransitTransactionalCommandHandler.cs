@@ -7,36 +7,33 @@ using Microsoft.Extensions.Logging;
 
 namespace Framework.Commands.CommandHandlers;
 
-public class MassTransitTransactionalCommandHandler<TRequest,TResponse>: IConsumer<TRequest>
+public abstract class MassTransitTransactionalCommandHandler<TRequest, TResponse> : IConsumer<TRequest>
     where TRequest : RequestCommandData
     where TResponse : ResponseCommand
 {
-    private readonly ITransactionalBus _transactionalBus;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public MassTransitTransactionalCommandHandler(ITransactionalBus transactionalBus)
+    protected MassTransitTransactionalCommandHandler(IUnitOfWork unitOfWork)
     {
-        _transactionalBus = transactionalBus;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task Consume(ConsumeContext<TRequest> context)
     {
-        var result = await Handle(context.Message);
-        await _transactionalBus.Send(context);
-        await context.RespondAsync(result);
-    }
-
-    public virtual async Task<TResponse> Handle(TRequest command)
-    {
         try
         {
-
-            var response = await Handle(command);
-            await _transactionalBus.Release(); 
-            return response;
+            var response = default(TResponse);
+            if (_unitOfWork.HasActiveTransaction) response = await Handle(context.Message);
+            await using var transaction = await _unitOfWork?.BeginTransactionAsync()!;
+            response = await Handle(context.Message);
+            await context.RespondAsync(response);
         }
         catch (AppException ex)
         {
-            throw new AppException(ResultCode.BadRequest,ex.Message);
+            _unitOfWork.RollbackTransaction();
+            throw new AppException(ResultCode.BadRequest, ex.Message);
         }
     }
+
+    protected abstract Task<TResponse> Handle(TRequest command);
 }

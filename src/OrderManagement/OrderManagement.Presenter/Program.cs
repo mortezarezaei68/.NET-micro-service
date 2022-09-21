@@ -25,7 +25,6 @@ builder.Services.AddDbContext<OrderManagementContext>(b =>
 });
 builder.Services.AddScoped<IUnitOfWork,UnitOfWork<OrderManagementContext>>();
 builder.Services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
-builder.Services.AddTransient(typeof(MassTransitTransactionalCommandHandler<,>));
 var bus=Bus.Factory.CreateUsingInMemory(configurator =>
 {
     configurator.AutoStart = true;
@@ -37,14 +36,28 @@ var bus=Bus.Factory.CreateUsingInMemory(configurator =>
 });
 builder.Services.AddMassTransit(cfg =>
 {
+    cfg.UsingInMemory((context, cfg) =>
+    {
+        cfg.UseMessageRetry(retryConfiguration =>
+        {
+            retryConfiguration.Intervals(2000, 4000, 10000); // in ms
+        });
+         cfg.ConfigureEndpoints(context);
+        //cfg.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
+    });
+   
     cfg.AddTransactionalBus();
     cfg.AddMediator(configurator =>
     {
         configurator.AddConsumer<CreateOrderConsumer>();
         configurator.AddConsumer<UpdateOrderConsumer>();
-        configurator.ConfigureMediator((context, cfg) => cfg.UseHttpContextScopeFilter());
+        configurator.ConfigureMediator((context, cfg) => cfg.UseHttpContextScopeFilter(context));
+        configurator.AddSagaStateMachine<OrderStateMachine, OrderState>()
+            .InMemoryRepository();
     });
+
 });
+//builder.Services.AddMassTransitHostedService(new MassTransitConsoleHostedService(bus));
 // builder.Services.AddMediator(configurator =>
 // {
 //     var test=configurator.GetType().BaseType.Name.Contains(
@@ -60,7 +73,7 @@ builder.Services.AddMassTransit(cfg =>
 //     configurator.ConfigureMediator((context, cfg) => cfg.UseHttpContextScopeFilter(context));
 // });
 
-// builder.Services.AddHostedService<MassTransitConsoleHostedService>();
+builder.Services.AddHostedService<MassTransitConsoleHostedService>();
 //
 // builder.Services.AddMassTransit(cfg =>
 // {
