@@ -5,10 +5,10 @@ namespace OrderManagement.Core;
 
 public class OrderState : SagaStateMachineInstance
 {
-    public int OrderId { get; set; }
+    public int Id { get; set; }
     public Guid CorrelationId { get; set; }
-    public Order Order { get; set; }
-    public DateTime Created { get; set; }
-    public DateTime Updated { get; set; }
+    public DateTime CreatedDate { get; set; }
+    public DateTime UpdatedDate { get; set; }
     public string State { get; set; }
+    public string EventId { get; set; }
 }

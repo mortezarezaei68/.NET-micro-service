@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Reflection;
 using System.Transactions;
 using Framework.Buses;
@@ -7,13 +8,33 @@ using Framework.Domain.UnitOfWork;
 using Framework.UnitOfWork;
 using MassTransit;
 using MassTransit.Mediator;
+using MassTransit.Metadata;
+using MassTransit.Transactions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using OpenTelemetry;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using OrderManagement.Core;
 using OrderManagement.Core.Extensions;
 using OrderManagement.Core.RequestCommand;
+using Serilog;
+using Serilog.Events;
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .MinimumLevel.Override("MassTransit", LogEventLevel.Debug)
+    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+    .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
+    .MinimumLevel.Override("Microsoft.EntityFrameworkCore.Database.Command", LogEventLevel.Warning)
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -23,66 +44,69 @@ builder.Services.AddDbContext<OrderManagementContext>(b =>
     b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
         options => { options.CommandTimeout(120); });
 });
-builder.Services.AddScoped<IUnitOfWork,UnitOfWork<OrderManagementContext>>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork<OrderManagementContext>>();
 builder.Services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
-var bus=Bus.Factory.CreateUsingInMemory(configurator =>
+// var bus=Bus.Factory.CreateUsingInMemory(configurator =>
+// {
+//     configurator.AutoStart = true;
+//     configurator.UseTransaction(transactionConfigurator =>
+//     {
+//         transactionConfigurator.Timeout=TimeSpan.FromSeconds(90);
+//         transactionConfigurator.IsolationLevel = IsolationLevel.ReadCommitted;
+//     });
+//     configurator.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
+//
+// });
+builder.Services.AddOpenTelemetryTracing(x =>
 {
-    configurator.AutoStart = true;
-    configurator.UseTransaction(transactionConfigurator =>
-    {
-        transactionConfigurator.Timeout=TimeSpan.FromSeconds(90);
-        transactionConfigurator.IsolationLevel = IsolationLevel.ReadCommitted;
-    });
+    x.SetResourceBuilder(ResourceBuilder.CreateDefault()
+            .AddService("api")
+            .AddTelemetrySdk()
+            .AddEnvironmentVariableDetector())
+        .AddSource("MassTransit")
+        .AddAspNetCoreInstrumentation()
+        .AddJaegerExporter(o =>
+        {
+            o.AgentHost = HostMetadataCache.IsRunningInContainer ? "jaeger" : "localhost";
+            o.AgentPort = 6831;
+            o.MaxPayloadSizeInBytes = 4096;
+            o.ExportProcessorType = ExportProcessorType.Batch;
+            o.BatchExportProcessorOptions = new BatchExportProcessorOptions<Activity>
+            {
+                MaxQueueSize = 2048,
+                ScheduledDelayMilliseconds = 5000,
+                ExporterTimeoutMilliseconds = 30000,
+                MaxExportBatchSize = 512,
+            };
+        });
 });
 builder.Services.AddMassTransit(cfg =>
 {
+
+    cfg.AddEntityFrameworkOutbox<OrderManagementContext>(o =>
+    {
+        // configure which database lock provider to use (Postgres, SqlServer, or MySql)
+        o.UseSqlServer();
+        o.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
+        // enable the bus outbox
+        o.UseBusOutbox();
+    });
+    cfg.AddConsumer<CreateOrderConsumer>();
+    cfg.AddConsumer<UpdateOrderConsumer>();
+    cfg.AddSagaStateMachine<OrderStateMachine, OrderState,RegistrationStateDefinition>()
+        .EntityFrameworkRepository(r =>
+        {
+            r.ExistingDbContext<OrderManagementContext>();
+            r.UseSqlServer();
+        });
     cfg.UsingInMemory((context, cfg) =>
     {
-        cfg.UseMessageRetry(retryConfiguration =>
-        {
-            retryConfiguration.Intervals(2000, 4000, 10000); // in ms
-        });
-         cfg.ConfigureEndpoints(context);
-        //cfg.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
+        cfg.AutoStart = true;
+        cfg.ConfigureEndpoints(context);
+        cfg.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
     });
-   
-    cfg.AddTransactionalBus();
-    cfg.AddMediator(configurator =>
-    {
-        configurator.AddConsumer<CreateOrderConsumer>();
-        configurator.AddConsumer<UpdateOrderConsumer>();
-        configurator.ConfigureMediator((context, cfg) => cfg.UseHttpContextScopeFilter(context));
-        configurator.AddSagaStateMachine<OrderStateMachine, OrderState>()
-            .InMemoryRepository();
-    });
-
 });
-//builder.Services.AddMassTransitHostedService(new MassTransitConsoleHostedService(bus));
-// builder.Services.AddMediator(configurator =>
-// {
-//     var test=configurator.GetType().BaseType.Name.Contains(
-//         nameof(MassTransitTransactionalCommandHandler<RequestCommandData, ResponseCommand>));
-//     configurator.AddConsumer<CreateOrderConsumer>();
-//     // configurator.AddConsumers(type =>
-//     // {
-//     //     var data=type.BaseType?.Name.Contains(
-//     //         nameof(MassTransitTransactionalCommandHandler<RequestCommandData, ResponseCommand>)) ?? false;
-//     //     return data;
-//     // }, typeof(RequestCommandData).Assembly);
-//     configurator.AddRequestClient<CreateOrderConsumerRequest>();
-//     configurator.ConfigureMediator((context, cfg) => cfg.UseHttpContextScopeFilter(context));
-// });
-
 builder.Services.AddHostedService<MassTransitConsoleHostedService>();
-//
-// builder.Services.AddMassTransit(cfg =>
-// {
-//     cfg.SetKebabCaseEndpointNameFormatter();
-//
-//  
-//     cfg.UsingInMemory(ConfigureBus);
-//
-// });
 
 builder.Services.AddCustomSwagger();
 

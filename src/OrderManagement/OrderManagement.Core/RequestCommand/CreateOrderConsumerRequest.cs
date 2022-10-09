@@ -19,8 +19,9 @@ public class CreateOrderConsumerResponse:ResponseCommand
 public class UpdateOrderConsumerRequest:
     RequestCommandData
 {
+    public Guid Id { get; set; }
     public string Name { get; set; }
-    public Guid OrderId { get; set; }
+    public string OrderId { get; set; }
 }
 public class UpdateOrderConsumerResponse:ResponseCommand
 {

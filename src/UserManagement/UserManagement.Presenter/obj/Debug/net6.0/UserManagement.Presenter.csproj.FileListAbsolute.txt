@@ -200,3 +200,5 @@
 /media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/bin/Debug/net6.0/Polly.dll
 /media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/bin/Debug/net6.0/Polly.Extensions.Http.dll
 /media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/obj/Debug/net6.0/refint/UserManagement.Presenter.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/bin/Debug/net6.0/MassTransit.Abstractions.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/bin/Debug/net6.0/MassTransit.Abstractions.xml

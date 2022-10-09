@@ -1,5 +1,6 @@
 using MassTransit;
 using MassTransit.Mediator;
+using MassTransit.Transactions;
 using Microsoft.AspNetCore.Mvc;
 using OrderManagement.Core;
 using OrderManagement.Core.RequestCommand;
@@ -10,21 +11,19 @@ namespace OrderManagement.Presenter.Controllers;
 public class TestController : ControllerBase
 {
     private readonly IRequestClient<CreateOrderConsumerRequest> _requestClient;
-    private readonly IMediator _mediator;
-    private readonly IPublishEndpoint _publishEndpoint;
+    private readonly IBus _publishEndpoint;
 
-    public TestController(IRequestClient<CreateOrderConsumerRequest> requestClient, IMediator mediator,
-        IPublishEndpoint publishEndpoint)
+    public TestController(IRequestClient<CreateOrderConsumerRequest> requestClient,
+        IBus publishEndpoint)
     {
         _requestClient = requestClient;
-        _mediator = mediator;
         _publishEndpoint = publishEndpoint;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAsync(CreateOrderConsumerRequest request)
+    public async Task<IActionResult> GetAsync(CreateOrderConsumerRequest request,CancellationToken cancellationToken)
     {
-        await _mediator.Publish(request);
+        await _publishEndpoint.Publish(request, cancellationToken);
         //await _mediator.Send(request);
         //var test= await _requestClient.GetResponse<CreateOrderConsumerResponse>(request);
 

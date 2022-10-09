@@ -8,21 +8,28 @@ public class OrderStateMachine : MassTransitStateMachine<OrderState>
 {
     public OrderStateMachine()
     {
-        Event(() => OrderCreated, x => 
-            x.CorrelateById(m => m.Message.CorrelationId));
-        Event(() => OrderUpdated, x => x.CorrelateById(m => m.Message.CorrelationId));
+        Event(() => OrderCreated, x => x.CorrelateById(m => m.Message.Id));
+        Event(() => OrderUpdated, x => x.CorrelateById(m => m.Message.Id));
 
         InstanceState(x => x.State);
 
         Initially(
             When(OrderCreated)
-                .Then(context => UpdateSagaState(context.Saga,context.Message.Order))
-                .TransitionTo(Created));
-
-        During(Updated,
-            When(OrderCreated)
-                .TransitionTo(Updated),
-            When(OrderUpdated).Then(x => UpdateSagaState(x.Saga, x.Message.Order)));
+                // .If(context => context.Saga.Id==0,
+                //     fail => fail.Then(_ => throw new ApplicationException("Totally random, but you didn't pay enough for quality service")))
+                .Then(context => UpdateSagaState(context.Saga, context.Message.Name))
+                .TransitionTo(Updated)
+                .Publish(context => new UpdateOrderConsumerRequest()
+                {
+                    Name = "test",
+                    OrderId = "test1"
+                }));
+        
+        //
+        // During(Updated,
+        //     When(OrderCreated)
+        //         .TransitionTo(Updated),
+        //     When(OrderUpdated).Then(x => UpdateSagaState(x.Saga, x.Message.Order)));
 
         //
         // During(Accepted,
@@ -54,19 +61,18 @@ public class OrderStateMachine : MassTransitStateMachine<OrderState>
         //         })
         // );
     }
-        
-    private void UpdateSagaState(OrderState state, Order order)
+
+    private void UpdateSagaState(OrderState state, string orderName)
     {
         var currentDate = DateTime.Now;
-        state.Created = currentDate;
-        state.Updated = currentDate;
-        state.Order = order;
+        state.CreatedDate = currentDate;
+        state.UpdatedDate = currentDate;
+        state.EventId = Guid.NewGuid().ToString();
     }
 
     public State Created { get; private set; }
     public State Updated { get; private set; }
 
-    public Event<OrderCreated> OrderCreated { get; private set; }
-    public Event<OrderUpdated> OrderUpdated { get; private set; }
-
+    public Event<UpdateOrderConsumerRequest> OrderUpdated { get; private set; }
+    public Event<CreateOrderConsumerRequest> OrderCreated { get; private set; }
 }

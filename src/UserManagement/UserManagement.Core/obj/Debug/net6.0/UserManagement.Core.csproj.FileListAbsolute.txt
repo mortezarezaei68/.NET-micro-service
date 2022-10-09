@@ -44,3 +44,5 @@
 /media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/bin/Debug/net6.0/Framework.Exception.pdb
 /media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/bin/Debug/net6.0/Framework.Queries.pdb
 /media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/obj/Debug/net6.0/refint/UserManagement.Core.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/bin/Debug/net6.0/MassTransit.Abstractions.dll
+/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/bin/Debug/net6.0/MassTransit.Abstractions.xml
