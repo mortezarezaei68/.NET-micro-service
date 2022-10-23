@@ -9,19 +9,18 @@ public class User : IdentityUser<int>, IEntityAudit
     // public IReadOnlyCollection<UserRole> UserRoles => _userRoles;
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
-    public UserType UserType { get; private set; }
 
     public UserGenderType GenderType { get; private set; }
 
-    public static User Add(UserGenderType genderType, string lastName, string firstName, UserType userType,string userName)
+    public static User Add(UserGenderType genderType, string lastName, string firstName, string userName, string email)
     {
         return new User
         {
             GenderType = genderType,
             LastName = lastName,
             FirstName = firstName,
-            UserType = userType,
-            UserName = userName
+            UserName = userName,
+            Email = email
         };
     }
 

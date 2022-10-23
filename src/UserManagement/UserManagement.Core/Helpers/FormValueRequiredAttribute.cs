@@ -34,6 +34,7 @@ public sealed class FormValueRequiredAttribute : ActionMethodSelectorAttribute
             return false;
         }
 
-        return !string.IsNullOrEmpty(context.HttpContext.Request.Form[_name]);
+
+        return !string.IsNullOrEmpty(context.HttpContext.Request.Form[_name]);;
     }
 }

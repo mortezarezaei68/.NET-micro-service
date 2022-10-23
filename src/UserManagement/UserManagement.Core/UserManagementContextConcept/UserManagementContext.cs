@@ -6,7 +6,7 @@ using UserManagement.Core.Domains;
 
 namespace UserManagement.Core.UserManagementContextConcept;
 
-public class UserManagementContext : IdentityDbContext<User, Role, int>
+public class UserManagementContext : IdentityDbContext<User,Role,int>
 {
     public UserManagementContext(DbContextOptions<UserManagementContext> options) : base(options)
     {
@@ -43,11 +43,11 @@ public class UserManagementContext : IdentityDbContext<User, Role, int>
             switch (entry.State)
             {
                 case EntityState.Added:
-                    ((EntityAudit) entry.Entity).IsDeleted = false;
+                    ((IEntityAudit) entry.Entity).IsDeleted = false;
                     break;
                 case EntityState.Deleted:
                     entry.State = EntityState.Modified;
-                    ((EntityAudit) entry.Entity).IsDeleted = true;
+                    ((IEntityAudit) entry.Entity).IsDeleted = true;
                     break;
             }
     }
@@ -65,12 +65,12 @@ public class UserManagementContext : IdentityDbContext<User, Role, int>
         {
             if (entry.State == EntityState.Added)
             {
-                ((EntityAudit) entry.Entity).CreatedAt = DateTime.UtcNow;
-                ((EntityAudit) entry.Entity).CreatedBy = currentUserId;
+                ((IEntityAudit) entry.Entity).CreatedAt = DateTime.UtcNow;
+                ((IEntityAudit) entry.Entity).CreatedBy = currentUserId;
             }
 
-            ((EntityAudit) entry.Entity).UpdatedAt = DateTime.UtcNow;
-            ((EntityAudit) entry.Entity).UpdatedBy = currentUserId;
+            ((IEntityAudit) entry.Entity).UpdatedAt = DateTime.UtcNow;
+            ((IEntityAudit) entry.Entity).UpdatedBy = currentUserId;
         }
     }
 
@@ -81,5 +81,5 @@ public class UserManagementContext : IdentityDbContext<User, Role, int>
     }
 
     public DbSet<User> Users { get; set; }
-    public DbSet<Clinic> Clinics { get; set; }
+    public DbSet<Role> Roles { get; set; }
 }

@@ -41,8 +41,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddDbContext<OrderManagementContext>(b =>
 {
-    b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-        options => { options.CommandTimeout(120); });
+    // b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+    //     options => { options.CommandTimeout(120); });
+    // b.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQLConnection"));
 });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork<OrderManagementContext>>();
 builder.Services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
@@ -86,19 +87,24 @@ builder.Services.AddMassTransit(cfg =>
     cfg.AddEntityFrameworkOutbox<OrderManagementContext>(o =>
     {
         // configure which database lock provider to use (Postgres, SqlServer, or MySql)
-        o.UseSqlServer();
+        o.UsePostgres();
         o.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
         // enable the bus outbox
         o.UseBusOutbox();
     });
     cfg.AddConsumer<CreateOrderConsumer>();
     cfg.AddConsumer<UpdateOrderConsumer>();
-    cfg.AddSagaStateMachine<OrderStateMachine, OrderState,RegistrationStateDefinition>()
+    cfg.AddSagaStateMachine<OrderStateMachine, OrderState, RegistrationStateDefinition>()
         .EntityFrameworkRepository(r =>
         {
             r.ExistingDbContext<OrderManagementContext>();
-            r.UseSqlServer();
+            r.UsePostgres();
         });
+        // .EntityFrameworkRepository(r =>
+        // {
+        //     r.ExistingDbContext<OrderManagementContext>();
+        //     r.UseSqlServer();
+        // });
     cfg.UsingInMemory((context, cfg) =>
     {
         cfg.AutoStart = true;

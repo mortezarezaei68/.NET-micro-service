@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R4yeWiGj472ucTBpGfR67AuaabQ3pg5nG6aTYO10YtQ=",
+  "Hash": "SkqYDJ2lJJgyFz6bC4HH/zklGhRV0yxeRLNZFO2BV1E=",
   "Source": "UserManagement.Presenter",
   "BasePath": "_content/UserManagement.Presenter",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/obj/Debug/net6.0/scopedcss/bundle/UserManagement.Presenter.styles.css",
-      "SourceId": "UserManagement.Presenter",
-      "SourceType": "Computed",
-      "ContentRoot": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/obj/Debug/net6.0/scopedcss/bundle/",
-      "BasePath": "_content/UserManagement.Presenter",
-      "RelativePath": "UserManagement.Presenter.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/obj/Debug/net6.0/scopedcss/bundle/UserManagement.Presenter.styles.css"
-    },
-    {
-      "Identity": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/obj/Debug/net6.0/scopedcss/projectbundle/UserManagement.Presenter.bundle.scp.css",
-      "SourceId": "UserManagement.Presenter",
-      "SourceType": "Computed",
-      "ContentRoot": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/obj/Debug/net6.0/scopedcss/projectbundle/",
-      "BasePath": "_content/UserManagement.Presenter",
-      "RelativePath": "UserManagement.Presenter.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/obj/Debug/net6.0/scopedcss/projectbundle/UserManagement.Presenter.bundle.scp.css"
-    },
     {
       "Identity": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Presenter/wwwroot/css/site.css",
       "SourceId": "UserManagement.Presenter",

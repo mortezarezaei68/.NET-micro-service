@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -163,70 +163,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj",
-        "projectName": "Framework.Context",
-        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj",
-        "packagesPath": "/home/morteza/.nuget/packages/",
-        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Context/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/morteza/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj": {
-                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.3, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -289,7 +226,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -342,7 +279,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -409,7 +346,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -437,12 +374,6 @@
             "projectReferences": {
               "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Buses/Framework.Buses.csproj": {
                 "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Buses/Framework.Buses.csproj"
-              },
-              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj": {
-                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Context/Framework.Context.csproj"
-              },
-              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj": {
-                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj"
               }
             }
           }
@@ -483,25 +414,49 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
-            "OpenIddict": {
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
             "OpenIddict.Abstractions": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[4.0.0-preview4.22517.68, )"
             },
             "OpenIddict.AspNetCore": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[4.0.0-preview4.22517.68, )"
+            },
+            "OpenIddict.Client.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.0-preview4.22517.68, )"
             },
             "OpenIddict.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[4.0.0-preview4.22517.68, )"
+            },
+            "OpenIddict.Quartz": {
+              "target": "Package",
+              "version": "[4.0.0-preview4.22517.68, )"
             },
             "OpenIddict.Server": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[4.0.0-preview4.22517.68, )"
+            },
+            "Quartz.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Serilog.Sinks.Debug": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
@@ -520,7 +475,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

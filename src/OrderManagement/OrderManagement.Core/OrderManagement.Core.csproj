@@ -11,13 +11,17 @@
         <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.3.1" />
         <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
         <PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.0.6" />
-        <PackageReference Include="MassTransit.Marten" Version="8.0.6" />        
         <PackageReference Include="Automatonymous" Version="5.1.3" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\Frameworks\Framework.Buses\Framework.Buses.csproj" />
       <ProjectReference Include="..\..\Frameworks\Framework.Context\Framework.Context.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="Npgsql.EntityFrameworkCore.PostgreSQL">
+        <HintPath>..\..\..\..\..\..\..\..\..\home\morteza\.nuget\packages\npgsql.entityframeworkcore.postgresql\6.0.4\lib\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

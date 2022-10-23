@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Balosar.Server.ViewModels.Authorization;
+namespace UserManagement.Presenter.ViewModels.Authorization;
 
 public class AuthorizeViewModel
 {
