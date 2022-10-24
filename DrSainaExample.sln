@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagement.Core", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.Identity", "src\UserManagement\UserManagement.Identity\UserManagement.Identity.csproj", "{8C36D179-6DEF-4098-80E4-0887B7A97328}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Patterns", "src\Frameworks\Framework.Patterns\Framework.Patterns.csproj", "{EDEAE499-6AFA-44D5-90F5-34D216F587E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,7 @@ Global
 		{7EEA9DC0-73B7-4B0D-AF86-B899B9775206} = {50E7578A-BF4D-49AC-8AEF-229958C6C300}
 		{C1B6EF4B-7DDC-4AF7-87EC-E97C3DD9B8A8} = {50E7578A-BF4D-49AC-8AEF-229958C6C300}
 		{8C36D179-6DEF-4098-80E4-0887B7A97328} = {224A03C6-32CA-42BA-B40A-1191B008DA3D}
+		{EDEAE499-6AFA-44D5-90F5-34D216F587E2} = {3A62E6A5-F7FE-425C-88A8-97C7DC3E91A1}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5FC45F58-C0D6-473D-A1D4-8A7AB9E34C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -164,5 +167,9 @@ Global
 		{8C36D179-6DEF-4098-80E4-0887B7A97328}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C36D179-6DEF-4098-80E4-0887B7A97328}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C36D179-6DEF-4098-80E4-0887B7A97328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEAE499-6AFA-44D5-90F5-34D216F587E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEAE499-6AFA-44D5-90F5-34D216F587E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEAE499-6AFA-44D5-90F5-34D216F587E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEAE499-6AFA-44D5-90F5-34D216F587E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
