@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Controller/Framework.Controller.csproj": {}
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Controller/Framework.Controller.csproj": {}
   },
   "projects": {
-    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Commands/Framework.Commands.csproj": {
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Commands/Framework.Commands.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Commands/Framework.Commands.csproj",
+        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Commands/Framework.Commands.csproj",
         "projectName": "Framework.Commands",
-        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Commands/Framework.Commands.csproj",
+        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Commands/Framework.Commands.csproj",
         "packagesPath": "/home/morteza/.nuget/packages/",
-        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Commands/obj/",
+        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Commands/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/morteza/.nuget/NuGet/NuGet.Config"
@@ -26,11 +26,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Domain/Framework.Domain.csproj": {
-                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Domain/Framework.Domain.csproj"
+              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj": {
+                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj"
               },
-              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Exception/Framework.Exception.csproj": {
-                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Exception/Framework.Exception.csproj"
+              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj": {
+                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj"
               }
             }
           }
@@ -45,6 +45,22 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "DotNetCore.CAP": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "DotNetCore.CAP.Dashboard": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "DotNetCore.CAP.Kafka": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "DotNetCore.CAP.SqlServer": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[10.0.1, )"
@@ -68,7 +84,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -77,18 +94,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Controller/Framework.Controller.csproj": {
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Controller/Framework.Controller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Controller/Framework.Controller.csproj",
+        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Controller/Framework.Controller.csproj",
         "projectName": "Framework.Controller",
-        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Controller/Framework.Controller.csproj",
+        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Controller/Framework.Controller.csproj",
         "packagesPath": "/home/morteza/.nuget/packages/",
-        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Controller/obj/",
+        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Controller/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/morteza/.nuget/NuGet/NuGet.Config"
@@ -103,11 +120,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Commands/Framework.Commands.csproj": {
-                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Commands/Framework.Commands.csproj"
+              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Commands/Framework.Commands.csproj": {
+                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Commands/Framework.Commands.csproj"
               },
-              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Exception/Framework.Exception.csproj": {
-                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Exception/Framework.Exception.csproj"
+              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj": {
+                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj"
               }
             }
           }
@@ -136,7 +153,7 @@
             },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
-              "version": "[4.1.1, )"
+              "version": "[5.0.0, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
@@ -153,30 +170,28 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Domain/Framework.Domain.csproj": {
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Domain/Framework.Domain.csproj",
+        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj",
         "projectName": "Framework.Domain",
-        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Domain/Framework.Domain.csproj",
+        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/Framework.Domain.csproj",
         "packagesPath": "/home/morteza/.nuget/packages/",
-        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Domain/obj/",
+        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/morteza/.nuget/NuGet/NuGet.Config"
@@ -218,7 +233,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -227,18 +243,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Exception/Framework.Exception.csproj": {
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Exception/Framework.Exception.csproj",
+        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj",
         "projectName": "Framework.Exception",
-        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Exception/Framework.Exception.csproj",
+        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj",
         "packagesPath": "/home/morteza/.nuget/packages/",
-        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/MyProjects/My frameworks/dotnetCore_Microservice_framework/src/Frameworks/Framework.Exception/obj/",
+        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/morteza/.nuget/NuGet/NuGet.Config"
@@ -270,7 +286,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -279,7 +296,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

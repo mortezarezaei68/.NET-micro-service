@@ -48,7 +48,11 @@
             },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
-              "version": "[4.1.1, )"
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Microsoft.Extensions.Hosting.Abstractions": {
               "target": "Package",

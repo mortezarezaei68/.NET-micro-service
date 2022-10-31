@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5i3+B9YgKr5jZ2qYiLuxC9LLN+vz2pD7ZQxvOvDNcAL++NHCmiQdou1eH3YsFB/VRxn2w7lcsDrqew4daH/YeQ==",
+  "dgSpecHash": "4qHU+V6jw2evbkw5ZPS5n6io4ov2nL0AQmMbfl+gfr/fLdZfA+G+bphbRoBLmDrWVkotVasdZTyXigzY8TA13w==",
   "success": true,
   "projectFilePath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Common/Framework.Common.csproj",
   "expectedPackageFiles": [
     "/home/morteza/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
     "/home/morteza/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/9.0.0/mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
-    "/home/morteza/.nuget/packages/microsoft.aspnetcore.mvc.versioning/4.1.1/microsoft.aspnetcore.mvc.versioning.4.1.1.nupkg.sha512",
+    "/home/morteza/.nuget/packages/microsoft.aspnetcore.mvc.versioning/5.0.0/microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "/home/morteza/.nuget/packages/microsoft.aspnetcore.mvc.versioning.apiexplorer/5.0.0/microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "/home/morteza/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/home/morteza/.nuget/packages/microsoft.extensions.configuration.abstractions/5.0.0/microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "/home/morteza/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/5.0.0/microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",

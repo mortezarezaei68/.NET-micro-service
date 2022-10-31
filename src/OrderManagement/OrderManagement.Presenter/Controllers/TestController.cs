@@ -1,3 +1,4 @@
+using Framework.Controller.Extensions;
 using MassTransit;
 using MassTransit.Mediator;
 using MassTransit.Transactions;
@@ -6,9 +7,7 @@ using OrderManagement.Core;
 using OrderManagement.Core.RequestCommand;
 
 namespace OrderManagement.Presenter.Controllers;
-
-[Route("api/[controller]")]
-public class TestController : ControllerBase
+public class TestController : BaseController
 {
     private readonly IRequestClient<CreateOrderConsumerRequest> _requestClient;
     private readonly IBus _publishEndpoint;
@@ -20,8 +19,8 @@ public class TestController : ControllerBase
         _publishEndpoint = publishEndpoint;
     }
 
-    [HttpGet]
-    public async Task<IActionResult> GetAsync(CreateOrderConsumerRequest request,CancellationToken cancellationToken)
+    [HttpPost]
+    public async Task<IActionResult> CreateAsync(CreateOrderConsumerRequest request,CancellationToken cancellationToken)
     {
         await _publishEndpoint.Publish(request, cancellationToken);
         //await _mediator.Send(request);

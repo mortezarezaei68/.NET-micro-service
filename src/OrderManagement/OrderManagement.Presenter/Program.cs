@@ -10,6 +10,7 @@ using MassTransit;
 using MassTransit.Mediator;
 using MassTransit.Metadata;
 using MassTransit.Transactions;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using OpenTelemetry;
@@ -41,8 +42,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddDbContext<OrderManagementContext>(b =>
 {
-    // b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-    //     options => { options.CommandTimeout(120); });
+    b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+        options => { options.CommandTimeout(120); });
     // b.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQLConnection"));
 });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork<OrderManagementContext>>();
@@ -81,6 +82,8 @@ builder.Services.AddOpenTelemetryTracing(x =>
             };
         });
 });
+
+
 builder.Services.AddMassTransit(cfg =>
 {
 
@@ -95,16 +98,16 @@ builder.Services.AddMassTransit(cfg =>
     cfg.AddConsumer<CreateOrderConsumer>();
     cfg.AddConsumer<UpdateOrderConsumer>();
     cfg.AddSagaStateMachine<OrderStateMachine, OrderState, RegistrationStateDefinition>()
-        .EntityFrameworkRepository(r =>
-        {
-            r.ExistingDbContext<OrderManagementContext>();
-            r.UsePostgres();
-        });
         // .EntityFrameworkRepository(r =>
         // {
         //     r.ExistingDbContext<OrderManagementContext>();
-        //     r.UseSqlServer();
+        //     r.UsePostgres();
         // });
+        .EntityFrameworkRepository(r =>
+        {
+            r.ExistingDbContext<OrderManagementContext>();
+            r.UseSqlServer();
+        });
     cfg.UsingInMemory((context, cfg) =>
     {
         cfg.AutoStart = true;
