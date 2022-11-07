@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace Framework.Commands.CommandHandlers;
 
 public abstract class MassTransitTransactionalCommandHandler<TRequest, TResponse> : IConsumer<TRequest>
-    where TRequest : RequestCommandData
+    where TRequest : RequestCommand
     where TResponse : ResponseCommand
 {
     private readonly IUnitOfWork _unitOfWork;
@@ -22,18 +22,17 @@ public abstract class MassTransitTransactionalCommandHandler<TRequest, TResponse
     {
         try
         {
-            var response = default(TResponse);
-            if (_unitOfWork.HasActiveTransaction) response = await Handle(context.Message);
+            if (_unitOfWork.HasActiveTransaction) await Handle(context.Message,context.CancellationToken);
             await using var transaction = await _unitOfWork?.BeginTransactionAsync()!;
-            response = await Handle(context.Message);
+            var response = await Handle(context.Message,context.CancellationToken);
             await context.RespondAsync(response);
         }
         catch (AppException ex)
         {
-            _unitOfWork.RollbackTransaction();
+            _unitOfWork?.RollbackTransaction();
             throw new AppException(ResultCode.BadRequest, ex.Message);
         }
     }
 
-    protected abstract Task<TResponse> Handle(TRequest command);
+    protected abstract Task<TResponse> Handle(TRequest command,CancellationToken cancellationToken);
 }

@@ -114,21 +114,25 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "DotNetCore.CAP": {
+            "Automatonymous": {
               "target": "Package",
-              "version": "[6.1.0, )"
+              "version": "[5.1.3, )"
             },
-            "DotNetCore.CAP.Dashboard": {
+            "MassTransit": {
               "target": "Package",
-              "version": "[6.1.0, )"
+              "version": "[8.0.8, )"
             },
-            "DotNetCore.CAP.Kafka": {
+            "MassTransit.AspNetCore": {
               "target": "Package",
-              "version": "[6.1.0, )"
+              "version": "[7.3.1, )"
             },
-            "DotNetCore.CAP.SqlServer": {
+            "MassTransit.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.1.0, )"
+              "version": "[8.0.6, )"
+            },
+            "MassTransit.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.3.1, )"
             },
             "MediatR": {
               "target": "Package",

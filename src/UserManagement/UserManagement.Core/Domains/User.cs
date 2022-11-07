@@ -7,10 +7,9 @@ public class User : IdentityUser<int>, IEntityAudit
 {
     // private readonly List<UserRole> _userRoles = new();
     // public IReadOnlyCollection<UserRole> UserRoles => _userRoles;
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-
-    public UserGenderType GenderType { get; private set; }
+    public string FirstName { get; private init; }
+    public string LastName { get; private init; }
+    public UserGenderType GenderType { get; private init; }
 
     public static User Add(UserGenderType genderType, string lastName, string firstName, string userName, string email)
     {

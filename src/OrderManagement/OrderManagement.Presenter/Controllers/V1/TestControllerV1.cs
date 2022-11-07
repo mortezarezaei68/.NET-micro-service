@@ -1,18 +1,22 @@
 using Framework.Controller.Extensions;
 using MassTransit;
-using MassTransit.Mediator;
-using MassTransit.Transactions;
 using Microsoft.AspNetCore.Mvc;
-using OrderManagement.Core;
 using OrderManagement.Core.RequestCommand;
 
-namespace OrderManagement.Presenter.Controllers;
-public class TestController : BaseController
+namespace OrderManagement.Presenter.Controllers.V1;
+
+[ApiController]    
+[ApiResultFilter]
+[ApiExplorerSettings(GroupName = "v1")]
+[ApiVersion("1.0")]
+// [Route("api/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
+public class TestControllerV1 : ControllerBase
 {
     private readonly IRequestClient<CreateOrderConsumerRequest> _requestClient;
-    private readonly IBus _publishEndpoint;
+    private readonly IPublishEndpoint _publishEndpoint;
 
-    public TestController(IRequestClient<CreateOrderConsumerRequest> requestClient,
+    public TestControllerV1(IRequestClient<CreateOrderConsumerRequest> requestClient,
         IBus publishEndpoint)
     {
         _requestClient = requestClient;
@@ -20,7 +24,7 @@ public class TestController : BaseController
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateAsync(CreateOrderConsumerRequest request,CancellationToken cancellationToken)
+    public  async Task<IActionResult> CreateAsync(CreateOrderConsumerRequest request,CancellationToken cancellationToken)
     {
         await _publishEndpoint.Publish(request, cancellationToken);
         //await _mediator.Send(request);
@@ -28,4 +32,5 @@ public class TestController : BaseController
 
         return Ok();
     }
+    
 }

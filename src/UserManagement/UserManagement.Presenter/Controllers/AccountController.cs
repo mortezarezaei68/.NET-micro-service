@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using OpenIddict.Sandbox.AspNetCore.Server.ViewModels.Account;
 using UserManagement.Core.Domains;
-using UserManagement.Core.Models;
 using UserManagement.Core.UserManagementContextConcept;
 using UserManagement.Presenter.ViewModels.Account;
 

@@ -1,6 +1,6 @@
 namespace Framework.Commands.CommandHandlers;
 
-public class RequestCommandData
+public class RequestCommand
 {
     
 }

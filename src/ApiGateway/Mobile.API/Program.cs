@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddCustomSwagger(builder.Build());
+builder.Services.AddCustomSwagger();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
