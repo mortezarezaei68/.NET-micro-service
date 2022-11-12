@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "ZE/mR6gDcTUMFixj0bkHBCcmpNB2+rbwjmhUclv+puvk+gEcPUSZwAzcAmiV82aqAhXE5XE6RO12kifjqnZs2A==",
+  "dgSpecHash": "5bxY2vaHu2QDLxeg78MK8vdCj732rT8x2LEp9nbNmRhNOJp5s8u9VbJp4Fj9AOwIHjdXZzBAv2cagpJv1EUyuA==",
   "success": true,
   "projectFilePath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/UserManagement/UserManagement.Core/UserManagement.Core.csproj",
   "expectedPackageFiles": [
     "/home/morteza/.nuget/packages/automatonymous/5.1.3/automatonymous.5.1.3.nupkg.sha512",
     "/home/morteza/.nuget/packages/greenpipes/4.0.1/greenpipes.4.0.1.nupkg.sha512",
     "/home/morteza/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
-    "/home/morteza/.nuget/packages/masstransit/8.0.8/masstransit.8.0.8.nupkg.sha512",
-    "/home/morteza/.nuget/packages/masstransit.abstractions/8.0.8/masstransit.abstractions.8.0.8.nupkg.sha512",
+    "/home/morteza/.nuget/packages/masstransit/8.0.6/masstransit.8.0.6.nupkg.sha512",
+    "/home/morteza/.nuget/packages/masstransit.abstractions/8.0.6/masstransit.abstractions.8.0.6.nupkg.sha512",
     "/home/morteza/.nuget/packages/masstransit.aspnetcore/7.3.1/masstransit.aspnetcore.7.3.1.nupkg.sha512",
     "/home/morteza/.nuget/packages/masstransit.entityframeworkcore/8.0.6/masstransit.entityframeworkcore.8.0.6.nupkg.sha512",
     "/home/morteza/.nuget/packages/masstransit.extensions.dependencyinjection/7.3.1/masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512",

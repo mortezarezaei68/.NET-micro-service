@@ -2,42 +2,40 @@ using System.Reflection;
 using Framework.Commands.CommandHandlers;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Framework.Commands.MassTransitDefaultConfig;
 
 public static class ServiceExtension
 {
-    public static void MassTransitExtensions<TContext>(this IServiceCollection services) where TContext : DbContext
+    public static void MassTransitExtensions<TContext>(this IServiceCollection services,IConfiguration configuration, string projectName) where TContext : DbContext
     {
+        services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
         services.AddMassTransit(cfg =>
         {
             cfg.AddEntityFrameworkOutbox<TContext>(o =>
             {
-                // configure which database lock provider to use (Postgres, SqlServer, or MySql)
-                o.UsePostgres();
-                o.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
-                // enable the bus outbox
+                o.UseSqlServer();
                 o.UseBusOutbox();
             });
-            cfg.AddConsumers(type =>
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName != null && x.FullName.Contains(projectName)).ToArray();
+            cfg.AddConsumers(assemblies);
+            cfg.AddSagaStateMachines(assemblies);
+            cfg.SetEntityFrameworkSagaRepositoryProvider(configurator =>
             {
-                var data = type.BaseType?.Name.Contains(
-                    nameof(MassTransitTransactionalCommandHandler<RequestCommand, ResponseCommand>)) ?? false;
-                return data;
-            }, typeof(RequestCommand).Assembly);
-
-            cfg.AddSagaStateMachine<OrderStateMachine, OrderState, RegistrationStateDefinition>()
-                // .EntityFrameworkRepository(r =>
-                // {
-                //     r.ExistingDbContext<OrderManagementContext>();
-                //     r.UsePostgres();
-                // });
-                .EntityFrameworkRepository(r =>
+                configurator.ConcurrencyMode = ConcurrencyMode.Optimistic;
+                configurator.AddDbContext<DbContext, TContext>((provider, builder) =>
                 {
-                    r.ExistingDbContext<OrderManagementContext>();
-                    r.UseSqlServer();
+                    builder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), m =>
+                    {
+                        m.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name);
+                        m.MigrationsHistoryTable($"__{nameof(TContext)}");
+                    });
                 });
+
+            });
             cfg.UsingInMemory((context, cfg) =>
             {
                 cfg.AutoStart = true;

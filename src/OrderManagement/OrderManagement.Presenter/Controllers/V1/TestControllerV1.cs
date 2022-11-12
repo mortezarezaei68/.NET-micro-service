@@ -14,7 +14,7 @@ namespace OrderManagement.Presenter.Controllers.V1;
 public class TestControllerV1 : ControllerBase
 {
     private readonly IRequestClient<CreateOrderConsumerRequest> _requestClient;
-    private readonly IPublishEndpoint _publishEndpoint;
+    private readonly IBus _publishEndpoint;
 
     public TestControllerV1(IRequestClient<CreateOrderConsumerRequest> requestClient,
         IBus publishEndpoint)

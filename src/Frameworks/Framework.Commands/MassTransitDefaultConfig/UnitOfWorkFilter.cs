@@ -17,8 +17,8 @@ public class UnitOfWorkFilter<TContext, TMessage> : IFilter<TContext>
     {
         Console.WriteLine("Before uow execution....");
 
-        context.TryGetPayload(out IServiceProvider serviceProvider);
-        var unitOfWork = (IUnitOfWork)serviceProvider.GetService(typeof(IUnitOfWork));
+        context.TryGetPayload(out IServiceProvider? serviceProvider);
+        var unitOfWork = (IUnitOfWork)serviceProvider?.GetService(typeof(IUnitOfWork))!;
         try
         {
             if (unitOfWork.HasActiveTransaction) await next.Send(context);
@@ -28,7 +28,7 @@ public class UnitOfWorkFilter<TContext, TMessage> : IFilter<TContext>
         }
         catch (AppException ex)
         {
-            unitOfWork.RollbackTransaction();
+            unitOfWork?.RollbackTransaction();
             throw new AppException(ResultCode.BadRequest, ex.Message);
         }
 

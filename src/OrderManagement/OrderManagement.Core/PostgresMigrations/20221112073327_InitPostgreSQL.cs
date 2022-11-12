@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace OrderManagement.Core.Migrations
+namespace OrderManagement.Core.PostgresMigrations
 {
-    public partial class Init : Migration
+    public partial class InitPostgreSQL : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

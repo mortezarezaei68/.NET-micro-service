@@ -3,19 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OrderManagement.Core;
 
 #nullable disable
 
-namespace OrderManagement.Core.Migrations
+namespace OrderManagement.Core.PostgresMigrations
 {
     [DbContext(typeof(OrderManagementContext))]
-    [Migration("20221001154346_Init")]
-    partial class Init
+    partial class OrderManagementContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

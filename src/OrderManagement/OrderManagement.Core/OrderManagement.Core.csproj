@@ -18,10 +18,5 @@
       <ProjectReference Include="..\..\Frameworks\Framework.Buses\Framework.Buses.csproj" />
       <ProjectReference Include="..\..\Frameworks\Framework.Context\Framework.Context.csproj" />
     </ItemGroup>
-    <ItemGroup>
-      <Reference Include="Npgsql.EntityFrameworkCore.PostgreSQL">
-        <HintPath>..\..\..\..\..\..\..\..\..\home\morteza\.nuget\packages\npgsql.entityframeworkcore.postgresql\6.0.4\lib\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll</HintPath>
-      </Reference>
-    </ItemGroup>
 
 </Project>

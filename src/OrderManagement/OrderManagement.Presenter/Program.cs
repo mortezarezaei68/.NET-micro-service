@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Transactions;
 using Framework.Buses;
 using Framework.Commands.CommandHandlers;
+using Framework.Commands.MassTransitDefaultConfig;
 using Framework.Common;
 using Framework.Domain.UnitOfWork;
 using Framework.UnitOfWork;
@@ -48,7 +49,7 @@ builder.Services.AddDbContext<OrderManagementContext>(b =>
     // b.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQLConnection"));
 });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork<OrderManagementContext>>();
-builder.Services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
+// builder.Services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
 // var bus=Bus.Factory.CreateUsingInMemory(configurator =>
 // {
 //     configurator.AutoStart = true;
@@ -85,38 +86,32 @@ builder.Services.AddOpenTelemetryTracing(x =>
 });
 
 
-builder.Services.AddMassTransit(cfg =>
-{
-
-    cfg.AddEntityFrameworkOutbox<OrderManagementContext>(o =>
-    {
-        // configure which database lock provider to use (Postgres, SqlServer, or MySql)
-        o.UsePostgres();
-        o.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
-        // enable the bus outbox
-        o.UseBusOutbox();
-    });
-    cfg.AddConsumer<CreateOrderConsumer>();
-    cfg.AddConsumer<UpdateOrderConsumer>();
-    cfg.AddSagaStateMachine<OrderStateMachine, OrderState, RegistrationStateDefinition>()
-        // .EntityFrameworkRepository(r =>
-        // {
-        //     r.ExistingDbContext<OrderManagementContext>();
-        //     r.UsePostgres();
-        // });
-        .EntityFrameworkRepository(r =>
-        {
-            r.ExistingDbContext<OrderManagementContext>();
-            r.UseSqlServer();
-        });
-    cfg.UsingInMemory((context, cfg) =>
-    {
-        cfg.AutoStart = true;
-        cfg.ConfigureEndpoints(context);
-        cfg.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
-    });
-});
-builder.Services.AddHostedService<MassTransitConsoleHostedService>();
+// builder.Services.AddMassTransit(cfg =>
+// {
+//
+//     cfg.AddEntityFrameworkOutbox<OrderManagementContext>(o =>
+//     {
+//         // configure which database lock provider to use (Postgres, SqlServer, or MySql)
+//         o.UsePostgres();
+//         o.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
+//         // enable the bus outbox
+//         o.UseBusOutbox();
+//     });
+//     cfg.AddConsumers(typeof(CreateOrderConsumer).Assembly);
+//     cfg.AddSagaStateMachine<OrderStateMachine, OrderState, RegistrationStateDefinition>()
+//         .EntityFrameworkRepository(r =>
+//         {
+//             r.ExistingDbContext<OrderManagementContext>();
+//             r.UseSqlServer();
+//         });
+//     cfg.UsingInMemory((context, cfg) =>
+//     {
+//         cfg.AutoStart = true;
+//         cfg.ConfigureEndpoints(context);
+//         cfg.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
+//     });
+// });
+builder.Services.MassTransitExtensions<OrderManagementContext>(builder.Configuration,"OrderManagement.Core");
 
 builder.Services.AddCustomSwagger();
 

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using UserManagement.Core.Domains;
 
 namespace UserManagement.Identity.ViewModels.Account;
 
@@ -26,4 +27,6 @@ public class RegisterViewModel
     [DataType(DataType.Text)]
     [Display(Name = "LastName")]
     public string LastName { get; set; }
+
+    public UserGenderType GenderType { get; set; }  
 }
