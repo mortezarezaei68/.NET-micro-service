@@ -32,5 +32,11 @@ public class TestControllerV1 : ControllerBase
 
         return Ok();
     }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAsync()
+    {
+        return Ok();
+    }
     
 }

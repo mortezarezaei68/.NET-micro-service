@@ -23,17 +23,10 @@ using OrderManagement.Core.RequestCommand;
 using Serilog;
 using Serilog.Events;
 
-Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Information()
-    .MinimumLevel.Override("MassTransit", LogEventLevel.Debug)
-    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-    .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
-    .MinimumLevel.Override("Microsoft.EntityFrameworkCore.Database.Command", LogEventLevel.Warning)
-    .Enrich.FromLogContext()
-    .WriteTo.Console()
-    .CreateLogger();
+
 
 var builder = WebApplication.CreateBuilder(args);
+Logs.ConfigureLogging();
 
 builder.Host.UseSerilog();
 
@@ -46,21 +39,8 @@ builder.Services.AddDbContext<OrderManagementContext>(b =>
 {
     b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
         options => { options.CommandTimeout(120); });
-    // b.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQLConnection"));
 });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork<OrderManagementContext>>();
-// builder.Services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
-// var bus=Bus.Factory.CreateUsingInMemory(configurator =>
-// {
-//     configurator.AutoStart = true;
-//     configurator.UseTransaction(transactionConfigurator =>
-//     {
-//         transactionConfigurator.Timeout=TimeSpan.FromSeconds(90);
-//         transactionConfigurator.IsolationLevel = IsolationLevel.ReadCommitted;
-//     });
-//     configurator.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
-//
-// });
 builder.Services.AddOpenTelemetryTracing(x =>
 {
     x.SetResourceBuilder(ResourceBuilder.CreateDefault()
@@ -84,34 +64,10 @@ builder.Services.AddOpenTelemetryTracing(x =>
             };
         });
 });
+var kafkaConfiguration = builder.Configuration.GetSection("KafkaConfig").Get<List<KafkaConfiguration>>();
 
-
-// builder.Services.AddMassTransit(cfg =>
-// {
-//
-//     cfg.AddEntityFrameworkOutbox<OrderManagementContext>(o =>
-//     {
-//         // configure which database lock provider to use (Postgres, SqlServer, or MySql)
-//         o.UsePostgres();
-//         o.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
-//         // enable the bus outbox
-//         o.UseBusOutbox();
-//     });
-//     cfg.AddConsumers(typeof(CreateOrderConsumer).Assembly);
-//     cfg.AddSagaStateMachine<OrderStateMachine, OrderState, RegistrationStateDefinition>()
-//         .EntityFrameworkRepository(r =>
-//         {
-//             r.ExistingDbContext<OrderManagementContext>();
-//             r.UseSqlServer();
-//         });
-//     cfg.UsingInMemory((context, cfg) =>
-//     {
-//         cfg.AutoStart = true;
-//         cfg.ConfigureEndpoints(context);
-//         cfg.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
-//     });
-// });
-builder.Services.MassTransitExtensions<OrderManagementContext>(builder.Configuration,"OrderManagement.Core");
+builder.Services.MassTransitExtensions<OrderManagementContext>(builder.Configuration, "OrderManagement.Core",
+    kafkaConfiguration);
 
 builder.Services.AddCustomSwagger();
 
@@ -138,8 +94,3 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
-
-void ConfigureBus(IBusRegistrationContext context, IInMemoryBusFactoryConfigurator configurator)
-{
-    configurator.ConfigureEndpoints(context);
-}

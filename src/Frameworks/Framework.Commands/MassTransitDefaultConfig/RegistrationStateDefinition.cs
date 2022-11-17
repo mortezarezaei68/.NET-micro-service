@@ -20,4 +20,5 @@ public class RegistrationStateDefinition<TState,TContext> :
 
         endpointConfigurator.UseEntityFrameworkOutbox<TContext>(_provider);
     }
+
 }

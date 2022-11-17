@@ -1,4 +1,6 @@
+using System.ComponentModel;
 using System.Reflection;
+using Confluent.Kafka;
 using Framework.Commands.CommandHandlers;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +12,9 @@ namespace Framework.Commands.MassTransitDefaultConfig;
 
 public static class ServiceExtension
 {
-    public static void MassTransitExtensions<TContext>(this IServiceCollection services,IConfiguration configuration, string projectName) where TContext : DbContext
+
+    public static void MassTransitExtensions<TContext>(this IServiceCollection services,
+        IConfiguration configuration, string projectName, IEnumerable<KafkaConfiguration>? kafkaSetting = null) where TContext : DbContext
     {
         services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
         services.AddMassTransit(cfg =>
@@ -20,13 +24,23 @@ public static class ServiceExtension
                 o.UseSqlServer();
                 o.UseBusOutbox();
             });
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName != null && x.FullName.Contains(projectName)).ToArray();
+            //cfg.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
+            cfg.UsingInMemory((context, cfg) =>
+            {
+                cfg.AutoStart = true;
+                cfg.ConfigureEndpoints(context);
+                cfg.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
+            });
+            
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies()
+                .Where(x => x.FullName != null && x.FullName.Contains(projectName)).ToArray();
+      
             cfg.AddConsumers(assemblies);
             cfg.AddSagaStateMachines(assemblies);
-            cfg.SetEntityFrameworkSagaRepositoryProvider(configurator =>
+            cfg.SetEntityFrameworkSagaRepositoryProvider(repositoryConfigurator =>
             {
-                configurator.ConcurrencyMode = ConcurrencyMode.Optimistic;
-                configurator.AddDbContext<DbContext, TContext>((provider, builder) =>
+                repositoryConfigurator.ConcurrencyMode = ConcurrencyMode.Optimistic;
+                repositoryConfigurator.AddDbContext<DbContext, TContext>((provider, builder) =>
                 {
                     builder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), m =>
                     {
@@ -34,15 +48,29 @@ public static class ServiceExtension
                         m.MigrationsHistoryTable($"__{nameof(TContext)}");
                     });
                 });
-
             });
-            cfg.UsingInMemory((context, cfg) =>
+            
+            cfg.AddRider(riderConfiguration =>
             {
-                cfg.AutoStart = true;
-                cfg.ConfigureEndpoints(context);
-                cfg.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
+                riderConfiguration.AddProducers(assemblies);
+                
+                riderConfiguration.UsingKafka((context, kafkaConfiguration) =>
+                {
+                    kafkaConfiguration.Host(kafkaSetting.Select(a=>a.HostName).ToList());
+                    kafkaConfiguration.AddTopicEndPoints(context,assemblies);
+                });
             });
+   
+       
+         
         });
         services.AddHostedService<MassTransitConsoleHostedService>();
     }
+    
+
+ 
 }
+public class KafkaConfiguration 
+{
+    public string HostName { get; set; }        //Added set property
+} 
