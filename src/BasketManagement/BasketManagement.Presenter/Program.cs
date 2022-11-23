@@ -1,12 +1,9 @@
 using BasketManagement.Core;
 using Framework.Commands.MassTransitDefaultConfig;
 using Framework.Common;
-using Humanizer;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using Serilog.Events;
-using Serilog.Exceptions;
 using SharedLibrary.Core.Messages;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,10 +22,26 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddCustomSwagger();
 builder.Services.AddHttpContextAccessor();
-var kafkaConfiguration = builder.Configuration.GetSection("KafkaConfig").Get<List<KafkaConfiguration>>();
 
-builder.Services.MassTransitExtensions<BasketManagementContext>(builder.Configuration, "BasketManagement.Core",
-    kafkaConfiguration);
+
+// var kafkaConfiguration = builder.Configuration.GetSection("KafkaConfig").Get<List<KafkaConfiguration>>();
+
+builder.Services.AddMasstransitConsumerProducerExtension<BasketManagementContext>(builder.Configuration, nameof(BasketManagement.Core));
+// builder.Services.AddMassTransit(x =>
+// {
+//     x.UsingInMemory((context, cfg) => cfg.ConfigureEndpoints(context));
+//
+//     x.AddRider(rider =>
+//     {
+//         rider.AddProducer<KafkaMessage>(nameof(KafkaMessage).Underscore());
+//         rider.AddProducer<MarketingQueueMessage>(nameof(MarketingQueueMessage).Underscore());
+//
+//         rider.UsingKafka((context, k) =>
+//         {
+//             k.Host(new List<string> {"localhost:9092"});
+//         });
+//     });
+// });
 var app = builder.Build();
 
 

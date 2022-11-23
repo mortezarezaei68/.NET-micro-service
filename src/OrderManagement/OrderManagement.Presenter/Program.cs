@@ -41,6 +41,9 @@ builder.Services.AddDbContext<OrderManagementContext>(b =>
         options => { options.CommandTimeout(120); });
 });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork<OrderManagementContext>>();
+
+
+
 builder.Services.AddOpenTelemetryTracing(x =>
 {
     x.SetResourceBuilder(ResourceBuilder.CreateDefault()
@@ -64,10 +67,9 @@ builder.Services.AddOpenTelemetryTracing(x =>
             };
         });
 });
-var kafkaConfiguration = builder.Configuration.GetSection("KafkaConfig").Get<List<KafkaConfiguration>>();
+//var kafkaConfiguration = builder.Configuration.GetSection("KafkaConfig").Get<List<KafkaConfiguration>>();
 
-builder.Services.MassTransitExtensions<OrderManagementContext>(builder.Configuration, "OrderManagement.Core",
-    kafkaConfiguration);
+builder.Services.AddMasstransitConsumerProducerExtension<OrderManagementContext>(builder.Configuration, "OrderManagement.Core");
 
 builder.Services.AddCustomSwagger();
 

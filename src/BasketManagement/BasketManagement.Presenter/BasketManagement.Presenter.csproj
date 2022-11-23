@@ -9,19 +9,19 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Frameworks\Framework.Common\Framework.Common.csproj" />
       <ProjectReference Include="..\..\Frameworks\Framework.Controller\Framework.Controller.csproj" />
-      <ProjectReference Include="..\..\Shared\SharedLibrary.Core\SharedLibrary.Core.csproj" />
       <ProjectReference Include="..\BasketManagement.Core\BasketManagement.Core.csproj" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+        <PackageReference Include="Scrutor.AspNetCore" Version="3.3.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
         </PackageReference>
 
-        <PackageReference Include="Humanizer.Core" Version="2.14.1"/>
+        <PackageReference Include="Humanizer.Core" Version="2.14.1" />
     </ItemGroup>
 
 </Project>

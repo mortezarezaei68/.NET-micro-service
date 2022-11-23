@@ -7,16 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Frameworks\Framework.Commands\Framework.Commands.csproj" />
       <ProjectReference Include="..\..\Frameworks\Framework.Domain\Framework.Domain.csproj" />
+      <ProjectReference Include="..\..\Shared\SharedLibrary.Core\SharedLibrary.Core.csproj" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
-    </ItemGroup>
-    <ItemGroup>
-      <Reference Include="MassTransit.EntityFrameworkCoreIntegration">
-        <HintPath>..\..\..\..\..\..\..\..\..\home\morteza\.nuget\packages\masstransit.entityframeworkcore\8.0.6\lib\net6.0\MassTransit.EntityFrameworkCoreIntegration.dll</HintPath>
-      </Reference>
     </ItemGroup>
 
 </Project>

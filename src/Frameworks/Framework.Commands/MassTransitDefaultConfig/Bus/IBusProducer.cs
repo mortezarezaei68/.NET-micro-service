@@ -1,4 +1,4 @@
-﻿namespace Contracts.Bus;
+﻿namespace Framework.Commands.MassTransitDefaultConfig.Bus;
 
 public interface IBusProducer
 {

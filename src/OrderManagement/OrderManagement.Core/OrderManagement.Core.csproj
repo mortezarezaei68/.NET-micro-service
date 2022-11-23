@@ -17,6 +17,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Frameworks\Framework.Buses\Framework.Buses.csproj" />
       <ProjectReference Include="..\..\Frameworks\Framework.Context\Framework.Context.csproj" />
+      <ProjectReference Include="..\..\Shared\SharedLibrary.Core\SharedLibrary.Core.csproj" />
     </ItemGroup>
 
 </Project>

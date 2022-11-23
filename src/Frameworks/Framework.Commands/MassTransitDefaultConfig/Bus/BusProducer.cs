@@ -1,5 +1,5 @@
-﻿using Contracts.Bus;
-using MassTransit;
+﻿using MassTransit;
+using MassTransit.KafkaIntegration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Framework.Commands.MassTransitDefaultConfig.Bus;
@@ -16,6 +16,7 @@ public class BusProducer : IBusProducer
     public async Task ProduceAsync<T>(T message) where T : class
     {
         using var scope = _serviceScopeFactory.CreateScope();
+
 
         var producer = scope.ServiceProvider.GetRequiredService<ITopicProducer<T>>();
         await producer.Produce(message);

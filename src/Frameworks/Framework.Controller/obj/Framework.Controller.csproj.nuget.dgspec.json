@@ -31,6 +31,9 @@
               },
               "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj": {
                 "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Exception/Framework.Exception.csproj"
+              },
+              "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Masstransit.KafkaIntegration/Framework.Masstransit.KafkaIntegration.csproj": {
+                "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Masstransit.KafkaIntegration/Framework.Masstransit.KafkaIntegration.csproj"
               }
             }
           }
@@ -45,31 +48,35 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Automatonymous": {
+            "Apache.Avro": {
               "target": "Package",
-              "version": "[5.1.3, )"
+              "version": "[1.10.2, )"
+            },
+            "Confluent.SchemaRegistry": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Confluent.SchemaRegistry.Serdes.Avro": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Humanizer.Core": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            },
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.3.0, )"
             },
             "MassTransit": {
               "target": "Package",
               "version": "[8.0.6, )"
             },
-            "MassTransit.AspNetCore": {
-              "target": "Package",
-              "version": "[7.3.1, )"
-            },
             "MassTransit.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.6, )"
             },
-            "MassTransit.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[7.3.1, )"
-            },
             "MassTransit.Kafka": {
-              "target": "Package",
-              "version": "[8.0.6, )"
-            },
-            "MassTransit.RabbitMQ": {
               "target": "Package",
               "version": "[8.0.6, )"
             },
@@ -300,6 +307,77 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Masstransit.KafkaIntegration/Framework.Masstransit.KafkaIntegration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Masstransit.KafkaIntegration/Framework.Masstransit.KafkaIntegration.csproj",
+        "projectName": "Framework.Masstransit.KafkaIntegration",
+        "projectPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Masstransit.KafkaIntegration/Framework.Masstransit.KafkaIntegration.csproj",
+        "packagesPath": "/home/morteza/.nuget/packages/",
+        "outputPath": "/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc41/MyProjects/Mixed/Microservice Example For DrSaina/src/Frameworks/Framework.Masstransit.KafkaIntegration/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/morteza/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Humanizer.Core": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "MassTransit.Kafka": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
