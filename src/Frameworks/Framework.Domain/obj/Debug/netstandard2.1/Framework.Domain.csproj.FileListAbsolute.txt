@@ -1,9 +1,0 @@
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.Domain/obj/Debug/netstandard2.1/Framework.Domain.csprojAssemblyReference.cache
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.Domain/obj/Debug/netstandard2.1/Framework.Domain.AssemblyInfoInputs.cache
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.Domain/obj/Debug/netstandard2.1/Framework.Domain.AssemblyInfo.cs
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.Domain/obj/Debug/netstandard2.1/Framework.Domain.csproj.CoreCompileInputs.cache
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.Domain/bin/Debug/netstandard2.1/Framework.Domain.deps.json
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.Domain/bin/Debug/netstandard2.1/Framework.Domain.dll
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.Domain/bin/Debug/netstandard2.1/Framework.Domain.pdb
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.Domain/obj/Debug/netstandard2.1/Framework.Domain.dll
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/My frameworks/dotnetCore_Microservice_framework/src/Microservice.one/Framework.Domain/obj/Debug/netstandard2.1/Framework.Domain.pdb

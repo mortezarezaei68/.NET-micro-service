@@ -1,5 +1,5 @@
-using Common.Exceptions;
 using Framework.Domain.UnitOfWork;
+using Framework.Exception.Exceptions;
 using Framework.Exception.Exceptions.Enum;
 using MassTransit;
 
@@ -29,7 +29,7 @@ public class UnitOfWorkFilter<TContext, TMessage> : IFilter<TContext>
         catch (AppException ex)
         {
             unitOfWork?.RollbackTransaction();
-            throw new AppException(ResultCode.BadRequest, ex.Message);
+            throw new AppException(ex.Message,ResultCode.BadRequest);
         }
 
         Console.WriteLine("After uow execution....");

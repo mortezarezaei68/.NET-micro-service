@@ -10,7 +10,7 @@ namespace Framework.Buses
     public interface IEventBus
     {
         Task<TResponse> Issue<TResponse>(IRequest<TResponse> command, CancellationToken cancellationToken = default)
-            where TResponse : ResponseCommand;
+            where TResponse : ResultCommand;
         Task<TResponse> IssueQuery<TResponse>(IRequest<TResponse> query, CancellationToken cancellationToken = default)
             where TResponse : BaseResponseQuery;
         Task DomainEventDispatcher<TEvent>(TEvent eventToDispatch) where TEvent : IDomainEvent;

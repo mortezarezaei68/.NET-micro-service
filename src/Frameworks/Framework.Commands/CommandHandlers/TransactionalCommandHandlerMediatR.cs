@@ -1,7 +1,5 @@
-using System.Threading;
-using System.Threading.Tasks;
-using Common.Exceptions;
 using Framework.Domain.UnitOfWork;
+using Framework.Exception.Exceptions;
 using Framework.Exception.Exceptions.Enum;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -9,7 +7,7 @@ using Microsoft.Extensions.Logging;
 namespace Framework.Commands.CommandHandlers
 {
     public class TransactionalCommandHandlerMediatR<TCommand, TResponse> : ITransactionalCommandHandlerMediatR<
-            TCommand, TResponse> where TCommand : IRequest<TResponse> where TResponse : ResponseCommand
+            TCommand, TResponse> where TCommand : IRequest<TResponse> where TResponse : ResultCommand
     {
         private readonly ILogger<TransactionalCommandHandlerMediatR<TCommand, TResponse>> _logger;
         private readonly IUnitOfWork _unitOfWork;
@@ -35,7 +33,7 @@ namespace Framework.Commands.CommandHandlers
             catch (AppException ex)
             {
                 _unitOfWork.RollbackTransaction();
-                throw new AppException(ResultCode.BadRequest,ex.Message);
+                throw new AppException(ex.Message,ResultCode.BadRequest);
             }
         }
     }

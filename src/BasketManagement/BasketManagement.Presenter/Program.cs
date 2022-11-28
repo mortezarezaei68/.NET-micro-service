@@ -1,6 +1,8 @@
 using BasketManagement.Core;
 using Framework.Commands.MassTransitDefaultConfig;
 using Framework.Common;
+using Framework.Exception.Exceptions.Extensions;
+using Hellang.Middleware.ProblemDetails;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -19,6 +21,7 @@ builder.Services.AddDbContext<BasketManagementContext>(b =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddCustomProblemDetails();
 
 builder.Services.AddCustomSwagger();
 builder.Services.AddHttpContextAccessor();
@@ -55,7 +58,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseProblemDetails();
 app.UseRouting();
 
 app.UseAuthorization();

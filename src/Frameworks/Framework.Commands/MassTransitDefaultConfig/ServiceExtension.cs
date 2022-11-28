@@ -1,9 +1,5 @@
-using System.ComponentModel;
 using System.Reflection;
-using Confluent.Kafka;
-using Framework.Commands.CommandHandlers;
-using Framework.Commands.MassTransitDefaultConfig.Bus;
-using Framework.Masstransit.KafkaIntegration;
+using Dynamic.KafkaIntegration.Producer;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

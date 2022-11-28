@@ -1,9 +1,0 @@
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/Hamrah-mechanic-IS/IS-HamrahMechanic-Origin/IdentityServer4/src/Frameworks/Framework.Context/bin/Debug/netcoreapp3.1/Framework.Context.deps.json
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/Hamrah-mechanic-IS/IS-HamrahMechanic-Origin/IdentityServer4/src/Frameworks/Framework.Context/bin/Debug/netcoreapp3.1/Framework.Context.dll
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/Hamrah-mechanic-IS/IS-HamrahMechanic-Origin/IdentityServer4/src/Frameworks/Framework.Context/bin/Debug/netcoreapp3.1/Framework.Context.pdb
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/Hamrah-mechanic-IS/IS-HamrahMechanic-Origin/IdentityServer4/src/Frameworks/Framework.Context/obj/Debug/netcoreapp3.1/Framework.Context.csprojAssemblyReference.cache
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/Hamrah-mechanic-IS/IS-HamrahMechanic-Origin/IdentityServer4/src/Frameworks/Framework.Context/obj/Debug/netcoreapp3.1/Framework.Context.AssemblyInfoInputs.cache
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/Hamrah-mechanic-IS/IS-HamrahMechanic-Origin/IdentityServer4/src/Frameworks/Framework.Context/obj/Debug/netcoreapp3.1/Framework.Context.AssemblyInfo.cs
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/Hamrah-mechanic-IS/IS-HamrahMechanic-Origin/IdentityServer4/src/Frameworks/Framework.Context/obj/Debug/netcoreapp3.1/Framework.Context.csproj.CoreCompileInputs.cache
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/Hamrah-mechanic-IS/IS-HamrahMechanic-Origin/IdentityServer4/src/Frameworks/Framework.Context/obj/Debug/netcoreapp3.1/Framework.Context.dll
-/media/morteza/6b53ded8-ff21-4348-afd5-962880213bc4/Hamrah-mechanic-IS/IS-HamrahMechanic-Origin/IdentityServer4/src/Frameworks/Framework.Context/obj/Debug/netcoreapp3.1/Framework.Context.pdb

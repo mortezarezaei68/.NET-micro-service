@@ -21,7 +21,7 @@ namespace Framework.Controller.Extensions
                 .ToList();
             
 
-            var apiResult = new ResponseCommand(false, ResultCode.BadRequest, String.Join(", ", errors.ToArray()));
+            var apiResult = new ResultCommand(false, ResultCode.BadRequest, String.Join(", ", errors.ToArray()));
             context.Result = new JsonResult(apiResult) { StatusCode = 400 };
         }
     }

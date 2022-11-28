@@ -67,8 +67,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{16B3D6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary.Core", "src\Shared\SharedLibrary.Core\SharedLibrary.Core.csproj", "{4ED61923-DD2A-4C53-AEFE-8A74CBBC5ECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Masstransit.KafkaIntegration", "src\Frameworks\Framework.Masstransit.KafkaIntegration\Framework.Masstransit.KafkaIntegration.csproj", "{11DB254A-2BF3-4483-9946-A4BCA97EF5BE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,7 +107,6 @@ Global
 		{4F71308B-9955-4B40-8466-BD465CB31711} = {7C50708E-0CC6-423A-94E1-E17E2CA4DB9D}
 		{16B3D695-9CB7-4F38-955E-B8D21737798A} = {9141B9C6-5242-4929-9D55-8F42C66BDA71}
 		{4ED61923-DD2A-4C53-AEFE-8A74CBBC5ECF} = {16B3D695-9CB7-4F38-955E-B8D21737798A}
-		{11DB254A-2BF3-4483-9946-A4BCA97EF5BE} = {3A62E6A5-F7FE-425C-88A8-97C7DC3E91A1}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5FC45F58-C0D6-473D-A1D4-8A7AB9E34C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -208,9 +205,5 @@ Global
 		{4ED61923-DD2A-4C53-AEFE-8A74CBBC5ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ED61923-DD2A-4C53-AEFE-8A74CBBC5ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ED61923-DD2A-4C53-AEFE-8A74CBBC5ECF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11DB254A-2BF3-4483-9946-A4BCA97EF5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11DB254A-2BF3-4483-9946-A4BCA97EF5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11DB254A-2BF3-4483-9946-A4BCA97EF5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11DB254A-2BF3-4483-9946-A4BCA97EF5BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

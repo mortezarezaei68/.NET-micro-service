@@ -1,5 +1,8 @@
 using BasketManagement.Core;
 using Framework.Controller.Extensions;
+using Framework.Exception.DataAccessConfig;
+using Framework.Exception.Exceptions;
+using Framework.Exception.Exceptions.Enum;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,10 +26,14 @@ public class TestController: ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateAsync()
     {
-        await _busProducer.Produce(new KafkaMessage()
+        throw new InternalServerException("test", ResultCode.BadRequest);
+        return Ok(new TestModel(ResultStatus.Duplicate,"test"));
+    }
+
+    public class TestModel : ResponseCommand
+    {
+        public TestModel(ResultStatus status, string? result) : base(status, result)
         {
-            Text = "test"
-        });
-        return Ok();
+        }
     }
 }

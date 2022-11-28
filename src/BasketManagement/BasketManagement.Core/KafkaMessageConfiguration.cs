@@ -1,8 +1,6 @@
 using Confluent.Kafka;
-using Framework.Commands.MassTransitDefaultConfig;
-using Framework.Masstransit.KafkaIntegration;
+using Dynamic.KafkaIntegration.Producer;
 using MassTransit;
-using SharedLibrary.Core.Messages;
 
 namespace BasketManagement.Core;
 

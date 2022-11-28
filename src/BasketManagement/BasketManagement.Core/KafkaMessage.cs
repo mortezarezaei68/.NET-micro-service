@@ -1,5 +1,4 @@
-﻿using Framework.Commands.MassTransitDefaultConfig;
-using Framework.Masstransit.KafkaIntegration;
+﻿using Dynamic.KafkaIntegration.Producer;
 
 namespace BasketManagement.Core;
 

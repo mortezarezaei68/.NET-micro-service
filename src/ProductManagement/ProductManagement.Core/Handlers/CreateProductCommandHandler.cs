@@ -8,17 +8,17 @@ using ProductManagement.Core.HandlerCommands;
 namespace ProductManagement.Core.Handlers;
 
 
-public class CreateProductCommandHandler:MassTransitTransactionalCommandHandler<CreateProductCommandRequest,CreateProductCommandResponse>
+public class CreateProductCommandHandler:MassTransitTransactionalCommandHandler<CreateProductCommandRequest,CreateProductCommandResult>
 {
     private readonly IProductRepository _repository;
     public CreateProductCommandHandler(IUnitOfWork unitOfWork, IProductRepository repository) : base(unitOfWork)
     {
         _repository = repository;
     }
-    protected override async Task<CreateProductCommandResponse> Handle(CreateProductCommandRequest command,CancellationToken cancellationToken)
+    protected override async Task<CreateProductCommandResult> Handle(CreateProductCommandRequest command,CancellationToken cancellationToken)
     {
         await _repository.AddAsync(new Product(command.Name), cancellationToken);
-        return new CreateProductCommandResponse(true,ResultCode.Success);
+        return new CreateProductCommandResult(true,ResultCode.Success);
     }
 
 

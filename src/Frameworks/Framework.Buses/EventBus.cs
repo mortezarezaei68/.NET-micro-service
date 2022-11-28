@@ -17,7 +17,7 @@ namespace Framework.Buses
         }
 
         public async Task<TResponse> Issue<TResponse>(IRequest<TResponse> command,
-            CancellationToken cancellationToken = default) where TResponse : ResponseCommand
+            CancellationToken cancellationToken = default) where TResponse : ResultCommand
         {
             return await _mediator.Send(command, cancellationToken);
         }

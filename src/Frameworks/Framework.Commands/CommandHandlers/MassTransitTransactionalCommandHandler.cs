@@ -1,15 +1,13 @@
-using Common.Exceptions;
 using Framework.Domain.UnitOfWork;
+using Framework.Exception.Exceptions;
 using Framework.Exception.Exceptions.Enum;
 using MassTransit;
-using MassTransit.Transactions;
-using Microsoft.Extensions.Logging;
 
 namespace Framework.Commands.CommandHandlers;
 
 public abstract class MassTransitTransactionalCommandHandler<TRequest, TResponse> : IConsumer<TRequest>
     where TRequest : RequestCommand
-    where TResponse : ResponseCommand
+    where TResponse : ResultCommand
 {
     private readonly IUnitOfWork _unitOfWork;
 
@@ -30,7 +28,7 @@ public abstract class MassTransitTransactionalCommandHandler<TRequest, TResponse
         catch (AppException ex)
         {
             _unitOfWork?.RollbackTransaction();
-            throw new AppException(ResultCode.BadRequest, ex.Message);
+            throw new AppException( ex.Message,ResultCode.BadRequest);
         }
     }
 
