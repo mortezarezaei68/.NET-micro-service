@@ -16,7 +16,7 @@
         <PackageReference Include="MassTransit" Version="8.0.6" />
         <PackageReference Include="MassTransit.Kafka" Version="8.0.6" />
         <PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.0.6" />
-        <PackageReference Include="Apache.Avro" Version="1.10.2" />
+        <PackageReference Include="Apache.Avro" Version="1.11.0" />
         <PackageReference Include="Confluent.SchemaRegistry" Version="1.7.0" />
         <PackageReference Include="Confluent.SchemaRegistry.Serdes.Avro" Version="1.7.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
