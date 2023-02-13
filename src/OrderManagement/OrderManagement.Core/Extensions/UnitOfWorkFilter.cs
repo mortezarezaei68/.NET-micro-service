@@ -1,4 +1,3 @@
-using Common.Exceptions;
 using Framework.Domain.UnitOfWork;
 using Framework.Exception.Exceptions.Enum;
 using MassTransit;
@@ -26,10 +25,10 @@ public class UnitOfWorkFilter<TContext, TMessage> : IFilter<TContext>
             await next.Send(context);
             await unitOfWork.CommitAsync(transaction);
         }
-        catch (AppException ex)
+        catch (Exception ex)
         {
             unitOfWork.RollbackTransaction();
-            throw new AppException(ResultCode.BadRequest, ex.Message);
+            throw new Exception( ex.Message);
         }
 
         Console.WriteLine("After uow execution....");

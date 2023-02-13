@@ -1,6 +1,8 @@
+using Confluent.Kafka;
 using Framework.Commands.CommandHandlers;
 using Framework.Domain.UnitOfWork;
 using Framework.Exception.Exceptions.Enum;
+using MassTransit;
 using ProductManagement.Core.Domains;
 using ProductManagement.Core.Domains.RepositoriesInterfaces;
 using ProductManagement.Core.HandlerCommands;
@@ -8,18 +10,18 @@ using ProductManagement.Core.HandlerCommands;
 namespace ProductManagement.Core.Handlers;
 
 
-public class CreateProductCommandHandler:MassTransitTransactionalCommandHandler<CreateProductCommandRequest,CreateProductCommandResult>
+public class CreateProductCommandHandler:IConsumer<CreateProductCommandRequest>
 {
     private readonly IProductRepository _repository;
-    public CreateProductCommandHandler(IUnitOfWork unitOfWork, IProductRepository repository) : base(unitOfWork)
+    public CreateProductCommandHandler(IProductRepository repository) 
     {
         _repository = repository;
     }
-    protected override async Task<CreateProductCommandResult> Handle(CreateProductCommandRequest command,CancellationToken cancellationToken)
+
+
+    public async Task Consume(ConsumeContext<CreateProductCommandRequest> context)
     {
-        await _repository.AddAsync(new Product(command.Name), cancellationToken);
-        return new CreateProductCommandResult(true,ResultCode.Success);
+        await _repository.AddAsync(new Product(context.Message.Name),context.CancellationToken);
+        
     }
-
-
 }

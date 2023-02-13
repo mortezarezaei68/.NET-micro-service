@@ -6,9 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="EFCore.Cassandra" Version="2.0.5" />
-        <PackageReference Include="MassTransit" Version="8.0.6" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0-rc.1.22426.7">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
         </PackageReference>
@@ -16,7 +14,17 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Frameworks\Framework.Common\Framework.Common.csproj" />
       <ProjectReference Include="..\..\Frameworks\Framework.Controller\Framework.Controller.csproj" />
+      <ProjectReference Include="..\..\Frameworks\Framework.UnitOfWork\Framework.UnitOfWork.csproj" />
       <ProjectReference Include="..\ProductManagement.Core\ProductManagement.Core.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
     </ItemGroup>
 
 

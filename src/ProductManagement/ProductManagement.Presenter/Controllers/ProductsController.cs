@@ -3,15 +3,14 @@ using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using ProductManagement.Core.HandlerCommands;
 
-namespace ProductManagement.Presenter.Controllers.V1;
+namespace ProductManagement.Presenter.Controllers;
 
-[ApiExplorerSettings(GroupName = "v1")]
-[ApiVersion("1.0")]
-public class ProductController:BaseControllerV1
+
+public class ProductsController:BaseControllerV1
 {
-    private readonly IPublishEndpoint _publishEndpoint;
+    private readonly IBus _publishEndpoint;
 
-    public ProductController(IPublishEndpoint publishEndpoint)
+    public ProductsController(IBus publishEndpoint)
     {
         _publishEndpoint = publishEndpoint;
     }
@@ -21,6 +20,8 @@ public class ProductController:BaseControllerV1
     public async Task<IActionResult> CreateAsync(CreateProductCommandRequest command)
     {
         await _publishEndpoint.Publish(command);
+        Task.Run(() => Task.Delay(100));
         return Ok();
     }
+
 }

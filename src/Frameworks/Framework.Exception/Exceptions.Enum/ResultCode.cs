@@ -26,7 +26,7 @@ public enum ResultCode
     NotActive = 7,
 
 
-    [Display(Name = "your data not active")]
+    [Display(Name = "your data has duplicate record")]
     Duplicate = 8,
 
 }

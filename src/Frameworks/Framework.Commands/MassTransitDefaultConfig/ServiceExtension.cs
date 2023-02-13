@@ -1,5 +1,4 @@
 using System.Reflection;
-using Dynamic.KafkaIntegration.Producer;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -22,14 +21,18 @@ public static class ServiceExtension
                 o.UseSqlServer();
                 o.UseBusOutbox();
             });
-            x.UsingInMemory((context, cfg) => cfg.ConfigureEndpoints(context));
+            x.UsingInMemory((context, cfg) =>
+            {
+                cfg.ConfigureEndpoints(context);
+                cfg.ConnectConsumerConfigurationObserver(new UnitOfWorkConsumerConfigurationObserver());
+
+            });
             var assemblies = AppDomain.CurrentDomain.GetAssemblies()
                 .Where(assembly => assembly.FullName != null && assembly.FullName.Contains(projectsName)).ToArray();
             x.AddConsumers(assemblies);
             x.AddSagaStateMachines(assemblies);
             x.SetEntityFrameworkSagaRepositoryProvider(repositoryConfigurator =>
             {
-                repositoryConfigurator.ConcurrencyMode = ConcurrencyMode.Optimistic;
                 repositoryConfigurator.AddDbContext<DbContext, TContext>((provider, builder) =>
                 {
                     builder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), m =>
@@ -44,8 +47,8 @@ public static class ServiceExtension
             {
                 rider.AddProducers(assemblies);
                 rider.AddConsumers(assemblies);
-                x.AddSagaStateMachines(assemblies);
-                x.SetEntityFrameworkSagaRepositoryProvider(repositoryConfigurator =>
+                rider.AddSagaStateMachines(assemblies);
+                rider.SetEntityFrameworkSagaRepositoryProvider(repositoryConfigurator =>
                 {
                     repositoryConfigurator.ConcurrencyMode = ConcurrencyMode.Optimistic;
                     repositoryConfigurator.AddDbContext<DbContext, TContext>((provider, builder) =>
@@ -57,7 +60,7 @@ public static class ServiceExtension
                         });
                     });
                 });
-
+            
                 rider.UsingKafka((context, k) =>
                 {
                     k.Host(new List<string> {"localhost:9092"});
@@ -65,6 +68,8 @@ public static class ServiceExtension
                 });
             });
         });
+        services.AddHostedService<MassTransitConsoleHostedService>();
+
     }
 }
 

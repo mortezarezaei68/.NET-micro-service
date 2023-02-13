@@ -6,11 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="EFCore.Cassandra" Version="2.0.5" />
-
-    </ItemGroup>
-    <ItemGroup>
       <ProjectReference Include="..\..\Frameworks\Framework.Commands\Framework.Commands.csproj" />
+      <ProjectReference Include="..\..\Frameworks\Framework.Context\Framework.Context.csproj" />
       <ProjectReference Include="..\..\Frameworks\Framework.Domain\Framework.Domain.csproj" />
     </ItemGroup>
 

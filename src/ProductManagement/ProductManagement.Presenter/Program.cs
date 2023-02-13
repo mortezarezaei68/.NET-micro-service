@@ -1,33 +1,42 @@
-using Cassandra;
+using Framework.Commands.MassTransitDefaultConfig;
 using Framework.Common;
+using Framework.Domain.UnitOfWork;
+using Framework.Exception.Exceptions.Extensions;
+using Framework.UnitOfWork;
+using Hellang.Middleware.ProblemDetails;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations;
-using ProductManagement.Core;
+using ProductManagement.Core.Domains.RepositoriesInterfaces;
 using ProductManagement.Core.PersistenceInfrastructureEfCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddCustomProblemDetails();
+builder.Services.AddCustomSwagger();
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
-builder.Services.AddCustomSwagger();
-
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
 builder.Services.AddDbContext<ProductDbContext>(b =>
-{
+{    b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+    options => { options.CommandTimeout(120); });
 });
+
+builder.Services.AddTransient(typeof(UnitOfWork<>));
+builder.Services.AddScoped<IUnitOfWork,UnitOfWork<ProductDbContext>>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddMasstransitConsumerProducerExtension<ProductDbContext>(builder.Configuration, nameof(ProductManagement.Core));
+
+
+Logs.ConfigureLogging();
+builder.Host.UseSerilog();
+var app = builder.Build();
+
+app.UseProblemDetails();
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.InitializeProductDatabase().GetAwaiter().GetResult();
 app.UseRouting();
 
 app.UseAuthorization();

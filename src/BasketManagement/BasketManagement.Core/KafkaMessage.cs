@@ -1,4 +1,4 @@
-﻿using Dynamic.KafkaIntegration.Producer;
+﻿using Framework.Commands;
 
 namespace BasketManagement.Core;
 

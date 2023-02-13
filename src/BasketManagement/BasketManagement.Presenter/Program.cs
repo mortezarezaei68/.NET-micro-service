@@ -29,7 +29,7 @@ builder.Services.AddHttpContextAccessor();
 
 // var kafkaConfiguration = builder.Configuration.GetSection("KafkaConfig").Get<List<KafkaConfiguration>>();
 
-builder.Services.AddMasstransitConsumerProducerExtension<BasketManagementContext>(builder.Configuration, nameof(BasketManagement.Core));
+// builder.Services.AddMasstransitConsumerProducerExtension<BasketManagementContext>(builder.Configuration, nameof(BasketManagement.Core));
 // builder.Services.AddMassTransit(x =>
 // {
 //     x.UsingInMemory((context, cfg) => cfg.ConfigureEndpoints(context));

@@ -1,100 +1,104 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Reflection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
-using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.Filters;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using Unchase.Swashbuckle.AspNetCore.Extensions.Extensions;
+using Unchase.Swashbuckle.AspNetCore.Extensions.Options;
 
 namespace Framework.Common
 {
     public static class SwaggerExtension
     {
-        public static void AddCustomSwagger(this IServiceCollection services)
+    /// <summary>
+    /// customize swagger include: versioning by url, jwt config
+    /// </summary>
+    /// <param name="services"></param>
+    public static void AddCustomSwagger(this IServiceCollection services)
+    {
+        services.AddApiVersioning(o =>
         {
-            services.AddApiVersioning(o =>
+            o.AssumeDefaultVersionWhenUnspecified = true;
+            o.DefaultApiVersion = new ApiVersion(1, 0);
+            o.ReportApiVersions = true;
+            o.ApiVersionReader = new UrlSegmentApiVersionReader();
+        });
+        services.AddVersionedApiExplorer(
+            options =>
             {
-                o.AssumeDefaultVersionWhenUnspecified = true;
-                o.DefaultApiVersion = new ApiVersion(1, 0);
-                o.ReportApiVersions = true;
-                o.ApiVersionReader = ApiVersionReader.Combine(
-                    new QueryStringApiVersionReader("api-version")
-                    // new HeaderApiVersionReader("X-Version"),
-                    // new MediaTypeApiVersionReader("ver")
-                );
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
             });
-            services.AddVersionedApiExplorer(
-                options =>
-                {
-                    options.GroupNameFormat = "'v'VVV";
-                    options.SubstituteApiVersionInUrl = true;
-                });
-            services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen(c =>
+        
+        services.AddSwaggerGen(c =>
+        {
+            var securitySchema = new OpenApiSecurityScheme
             {
-                using (var serviceProvider = services.BuildServiceProvider())
+                Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                Name = "Authorization",
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.Http,
+                Scheme = "bearer",
+                Reference = new OpenApiReference
                 {
-                    // Review the FormMain Singleton.
-                    var provider = serviceProvider.GetRequiredService<IApiVersionDescriptionProvider>();
-                    foreach (var description in provider.ApiVersionDescriptions)
-                    {
-                        c.SwaggerDoc(description.GroupName, CreateInfoForApiVersion(description));
-                    }
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
                 }
-                
-
-                var securitySchema = new OpenApiSecurityScheme
-                {
-                    Description =
-                        "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-                    Name = "Authorization",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "bearer",
-                    Reference = new OpenApiReference
-                    {
-                        Type = ReferenceType.SecurityScheme,
-                        Id = "Bearer"
-                    }
-                };
-                c.AddSecurityDefinition("Bearer", securitySchema);
-
-                var securityRequirement = new OpenApiSecurityRequirement {{securitySchema, new[] {"Bearer"}}};
-                c.AddSecurityRequirement(securityRequirement);
-            });
-        }
-
-        public static void UseCustomSwagger(this IApplicationBuilder app)
-        {
-            IServiceProvider services = app.ApplicationServices;
-            using var scope = services.CreateScope();
-            var provider = scope.ServiceProvider.GetRequiredService<IApiVersionDescriptionProvider>();
-
-            app.UseSwagger();
-            app.UseSwaggerUI(options =>
-            {
-                foreach (var description in provider.ApiVersionDescriptions)
-                {
-                    options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
-                        description.GroupName.ToUpperInvariant());
-                }
-            });
-        }
-        private static OpenApiInfo CreateInfoForApiVersion(ApiVersionDescription description)
-        {
-            var info = new OpenApiInfo()
-            {
-                Title = "SwaggerHeroes API",
-                Version = description.ApiVersion.ToString()
             };
-
-            if (description.IsDeprecated)
+            c.AddSecurityDefinition("Bearer", securitySchema);
+            c.OperationFilter<SecurityRequirementsOperationFilter>();
+            c.AddEnumsWithValuesFixFilters(o =>
             {
-                info.Description += " This API version has been deprecated.";
-            }
+                // add descriptions from DescriptionAttribute or xml-comments to fix enums (add 'x-enumDescriptions' or its alias from XEnumDescriptionsAlias for schema extensions) for applied filters
+                o.IncludeDescriptions = true;
 
-            return info;
-        }
+                // get descriptions from DescriptionAttribute then from xml-comments
+                o.DescriptionSource = DescriptionSources.DescriptionAttributesThenXmlComments;
+                var xmlFiles = Directory.GetFiles(AppContext.BaseDirectory, "*.xml", SearchOption.TopDirectoryOnly)
+                    .ToList();
+                // get descriptions from xml-file comments on the specified path
+                xmlFiles.ForEach(xmlFile => o.IncludeXmlCommentsFrom(xmlFile));
+            });
+
+        });
+        services.AddEndpointsApiExplorer();
+        services.ConfigureOptions<ConfigureSwaggerOptions>();
+
+    }
+
+    /// <summary>
+    /// application middleware for swagger
+    /// </summary>
+    /// <param name="app"></param>
+    public static void UseCustomSwagger(this IApplicationBuilder app)
+    {
+        var services = app.ApplicationServices;
+        using var scope = services.CreateScope();
+        var provider = scope.ServiceProvider.GetRequiredService<IApiVersionDescriptionProvider>();
+
+        app.UseSwagger();
+        app.UseSwaggerUI(options =>
+        {
+            var projectName = Assembly.GetEntryAssembly()!.GetName().Name!;
+            options.DocumentTitle = $"DrSaina - {projectName} API document";
+            options.DocExpansion(DocExpansion.None);
+            options.DisplayRequestDuration();
+            options.EnableDeepLinking();
+            options.EnableFilter();
+            options.ShowExtensions();
+            options.EnableValidator();
+            
+            // make group name list for swagger ui
+            foreach (var description in provider.ApiVersionDescriptions)
+            {
+                options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
+                    $"{projectName}_{description.GroupName.ToUpperInvariant()}");
+            }
+        });
+    }
     }
 }
