@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  sqlservers:
+    image: "mcr.microsoft.com/mssql/server"
+    user: root
+    volumes:
+      - sqlservers-data:/var/opt/mssql/data
+    environment:
+      SA_PASSWORD: "@D12345678"
+      ACCEPT_EULA: "Y"
+    restart: always
+
+volumes:
+  sqlservers-data:
