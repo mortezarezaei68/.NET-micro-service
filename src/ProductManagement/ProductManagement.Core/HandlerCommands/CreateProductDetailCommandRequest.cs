@@ -4,6 +4,6 @@ namespace ProductManagement.Core.HandlerCommands;
 
 public class CreateProductDetailCommandRequest:RequestCommand
 {
-    public string Key { get; init; }
-    public string Value { get; init; }
+    public int ProductId { get; set; }
+    public Dictionary<string,string> ProductDetails { get; set; }
 }

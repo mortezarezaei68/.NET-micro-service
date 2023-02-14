@@ -11,6 +11,5 @@ public class ProductDetail:ValueObject
     }
 
     public string? Value { get; private init; }
-
     public string? Key { get; private init; }
 }

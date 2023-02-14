@@ -84,7 +84,7 @@ namespace Framework.Common
         app.UseSwaggerUI(options =>
         {
             var projectName = Assembly.GetEntryAssembly()!.GetName().Name!;
-            options.DocumentTitle = $"DrSaina - {projectName} API document";
+            options.DocumentTitle = $"Supply Chain - {projectName} API document";
             options.DocExpansion(DocExpansion.None);
             options.DisplayRequestDuration();
             options.EnableDeepLinking();
