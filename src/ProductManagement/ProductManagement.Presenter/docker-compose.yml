@@ -3,6 +3,8 @@ services:
   sqlservers:
     image: "mcr.microsoft.com/mssql/server"
     user: root
+    ports:
+      - "8650:1433"
     volumes:
       - sqlservers-data:/var/opt/mssql/data
     environment:

@@ -20,7 +20,13 @@ public class ProductsController:BaseControllerV1
     public async Task<IActionResult> CreateAsync(CreateProductCommandRequest command)
     {
         await _publishEndpoint.Publish(command);
-        Task.Run(() => Task.Delay(100));
+        return Ok();
+    }
+    [HttpPost("product-details")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<IActionResult> CreateAsync(CreateProductDetailCommandRequest command)
+    {
+        await _publishEndpoint.Publish(command);
         return Ok();
     }
 
