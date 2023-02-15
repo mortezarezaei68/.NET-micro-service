@@ -4,7 +4,7 @@ using MassTransit.EntityFrameworkCoreIntegration;
 using Microsoft.EntityFrameworkCore;
 using ProductManagement.Domains;
 
-namespace ProductManagement.Configurations.Ef;
+namespace ProductManagement.Ef;
 
 public class ProductDbContext:SagaDbContext
 {

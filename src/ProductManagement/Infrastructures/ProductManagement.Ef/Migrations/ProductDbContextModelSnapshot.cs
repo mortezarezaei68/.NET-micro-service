@@ -3,19 +3,18 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProductManagement.Configurations.Ef;
+using ProductManagement.Ef;
 
 #nullable disable
 
 namespace ProductManagement.Configurations.Ef.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20230215155846_Init")]
-    partial class Init
+    partial class ProductDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

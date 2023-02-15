@@ -26,7 +26,7 @@
       <ProjectReference Include="..\..\..\Frameworks\Framework.Controller\Framework.Controller.csproj" />
       <ProjectReference Include="..\..\..\Frameworks\Framework.Exception\Framework.Exception.csproj" />
       <ProjectReference Include="..\..\..\Frameworks\Framework.UnitOfWork\Framework.UnitOfWork.csproj" />
-      <ProjectReference Include="..\..\Infrastructures\ProductManagement.Configurations.Ef\ProductManagement.Configurations.Ef.csproj" />
+      <ProjectReference Include="..\..\Infrastructures\ProductManagement.Ef\ProductManagement.Ef.csproj" />
       <ProjectReference Include="..\..\ServiceContracts\ProductManagement.Commands\ProductManagement.Commands.csproj" />
       <ProjectReference Include="..\..\ServiceContracts\ProductManagement.Command.Handlers\ProductManagement.Command.Handlers.csproj" />
     </ItemGroup>

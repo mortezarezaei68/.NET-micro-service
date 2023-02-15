@@ -75,7 +75,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagement.Domains", "src\ProductManagement\Domains\ProductManagement.Domains\ProductManagement.Domains.csproj", "{F017FA84-74EF-416E-ACCC-3B17C9310174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagement.Configurations.Ef", "src\ProductManagement\Infrastructures\ProductManagement.Configurations.Ef\ProductManagement.Configurations.Ef.csproj", "{217A6A7B-1EE2-49A5-ABA3-41B3379BC0E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagement.Ef", "src\ProductManagement\Infrastructures\ProductManagement.Ef\ProductManagement.Ef.csproj", "{217A6A7B-1EE2-49A5-ABA3-41B3379BC0E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedKernel", "SharedKernel", "{4B6E5C1D-E7AE-410A-B484-CC8EC5F779F8}"
 EndProject

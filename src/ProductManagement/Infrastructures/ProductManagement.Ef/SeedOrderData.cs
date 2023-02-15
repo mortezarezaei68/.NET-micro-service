@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ProductManagement.Configurations.Ef
+namespace ProductManagement.Ef
 {
     public static class SeedOrderData
     {

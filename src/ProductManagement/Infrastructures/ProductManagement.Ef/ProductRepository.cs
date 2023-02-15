@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ProductManagement.Domains;
 using ProductManagement.Domains.RepositoriesInterfaces;
 
-namespace ProductManagement.Configurations.Ef;
+namespace ProductManagement.Ef;
 
 public class ProductRepository : IProductRepository
 {

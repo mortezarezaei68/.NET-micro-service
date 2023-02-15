@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProductManagement.Domains;
 
-namespace ProductManagement.Configurations.Ef.DomainConfigurations;
+namespace ProductManagement.Ef.DomainConfigurations;
 
 public class ProductConfiguration:IEntityTypeConfiguration<Product>
 {
