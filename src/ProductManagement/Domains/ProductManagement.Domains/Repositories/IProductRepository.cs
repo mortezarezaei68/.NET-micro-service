@@ -1,6 +1,4 @@
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-
-namespace ProductManagement.Domains.RepositoriesInterfaces;
+namespace ProductManagement.Domains.Repositories;
 
 public interface IProductRepository
 {

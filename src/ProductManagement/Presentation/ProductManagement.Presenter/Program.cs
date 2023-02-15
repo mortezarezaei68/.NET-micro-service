@@ -6,7 +6,7 @@ using Framework.UnitOfWork.UnitOfWork;
 using Hellang.Middleware.ProblemDetails;
 using Microsoft.EntityFrameworkCore;
 using ProductManagement.Configurations.Ef;
-using ProductManagement.Domains.RepositoriesInterfaces;
+using ProductManagement.Domains.Repositories;
 using ProductManagement.Ef;
 using Serilog;
 

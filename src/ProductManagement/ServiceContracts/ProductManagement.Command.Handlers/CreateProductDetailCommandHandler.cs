@@ -2,7 +2,7 @@ using Framework.Exception.Exceptions;
 using Framework.Exception.Exceptions.Enum;
 using MassTransit;
 using ProductManagement.Commands;
-using ProductManagement.Domains.RepositoriesInterfaces;
+using ProductManagement.Domains.Repositories;
 
 namespace ProductManagement.Command.Handlers;
 

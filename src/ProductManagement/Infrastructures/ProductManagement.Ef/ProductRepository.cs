@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ProductManagement.Domains;
-using ProductManagement.Domains.RepositoriesInterfaces;
+using ProductManagement.Domains.Repositories;
 
 namespace ProductManagement.Ef;
 
