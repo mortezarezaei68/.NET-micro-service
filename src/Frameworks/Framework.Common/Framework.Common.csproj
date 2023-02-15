@@ -20,6 +20,8 @@
         <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
         <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
         <PackageReference Include="Serilog.Exceptions" Version="8.1.0" />
+        <PackageReference Include="Mapster.DependencyInjection" Version="1.0.0" />
+        <PackageReference Include="Mapster.Core" Version="1.2.0" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Framework.Exception\Framework.Exception.csproj" />

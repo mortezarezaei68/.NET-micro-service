@@ -17,17 +17,16 @@ public class ProductsController:BaseControllerV1
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IActionResult> CreateAsync(CreateProductCommandRequest command)
+    public async Task<IActionResult> CreateAsync(CreateProductCommandRequest command,CancellationToken cancellationToken)
     {
-        await _publishEndpoint.Publish(command);
+        await _publishEndpoint.Publish(command, cancellationToken);
         return Ok();
     }
-    [HttpPost("product-details")]
+    [HttpPut("product-details/{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IActionResult> CreateAsync(CreateProductDetailCommandRequest command)
+    public async Task<IActionResult> CreateProductDetailAsync( string id,CreateProductDetailCommandRequest command,CancellationToken cancellationToken)
     {
-        await _publishEndpoint.Publish(command);
+        await _publishEndpoint.Publish(command, cancellationToken);
         return Ok();
     }
-
 }

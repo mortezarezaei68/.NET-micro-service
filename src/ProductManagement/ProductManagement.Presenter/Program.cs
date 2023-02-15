@@ -26,6 +26,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddMasstransitConsumerProducerExtension<ProductDbContext>(builder.Configuration, nameof(ProductManagement.Core));
 
 
+
 Logs.ConfigureLogging();
 builder.Host.UseSerilog();
 var app = builder.Build();

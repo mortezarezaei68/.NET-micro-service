@@ -13,8 +13,7 @@ public class CreateProductCommandHandler:IConsumer<CreateProductCommandRequest>
     {
         _repository = repository;
     }
-
-
+    
     public async Task Consume(ConsumeContext<CreateProductCommandRequest> context)
     {
         await _repository.AddAsync(new Product(context.Message.Name),context.CancellationToken);
