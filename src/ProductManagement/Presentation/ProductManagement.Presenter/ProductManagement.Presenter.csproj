@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Frameworks\Framework.Commands\Framework.Commands.csproj" />
+      <ProjectReference Include="..\..\..\Frameworks\Framework.Common\Framework.Common.csproj" />
+      <ProjectReference Include="..\..\..\Frameworks\Framework.Controller\Framework.Controller.csproj" />
+      <ProjectReference Include="..\..\..\Frameworks\Framework.Exception\Framework.Exception.csproj" />
+      <ProjectReference Include="..\..\..\Frameworks\Framework.UnitOfWork\Framework.UnitOfWork.csproj" />
+      <ProjectReference Include="..\..\Infrastructures\ProductManagement.Configurations.Ef\ProductManagement.Configurations.Ef.csproj" />
+      <ProjectReference Include="..\..\ServiceContracts\ProductManagement.Commands\ProductManagement.Commands.csproj" />
+      <ProjectReference Include="..\..\ServiceContracts\ProductManagement.Command.Handlers\ProductManagement.Command.Handlers.csproj" />
+    </ItemGroup>
+
+
+
+</Project>

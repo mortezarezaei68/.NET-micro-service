@@ -1,6 +1,6 @@
-using Framework.Domain.UnitOfWork;
 using Framework.Exception.Exceptions;
 using Framework.Exception.Exceptions.Enum;
+using Framework.UnitOfWork.UnitOfWork;
 using MediatR;
 using Microsoft.Extensions.Logging;
 

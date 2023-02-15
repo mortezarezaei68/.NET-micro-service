@@ -28,6 +28,13 @@
     <ItemGroup>
         <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj" />
         <ProjectReference Include="..\Framework.Exception\Framework.Exception.csproj" />
+        <ProjectReference Include="..\Framework.UnitOfWork\Framework.UnitOfWork.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Framework.Domain">
+        <HintPath>..\..\ProductManagement\ProductManagement.Presenter\bin\Debug\net6.0\Framework.Domain.dll</HintPath>
+      </Reference>
     </ItemGroup>
     
 

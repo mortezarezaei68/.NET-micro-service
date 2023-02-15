@@ -1,7 +1,5 @@
-using System;
-using System.Threading.Tasks;
-using Framework.Domain.UnitOfWork;
 using Framework.Exception.Exceptions;
+using Framework.UnitOfWork.UnitOfWork;
 
 namespace Framework.Commands.CommandHandlers
 {

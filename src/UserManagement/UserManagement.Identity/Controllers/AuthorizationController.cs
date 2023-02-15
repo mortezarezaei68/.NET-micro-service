@@ -312,107 +312,107 @@ public class AuthorizationController : Controller
     public IActionResult Deny() => Forbid(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
     #endregion
 
-    #region Device flow
-    // Note: to support the device flow, you must provide your own verification endpoint action:
-    [Authorize, HttpGet("~/connect/verify"), IgnoreAntiforgeryToken]
-    public async Task<IActionResult> Verify()
-    {
-        var request = HttpContext.GetOpenIddictServerRequest() ??
-            throw new InvalidOperationException("The OpenID Connect request cannot be retrieved.");
-
-        // If the user code was not specified in the query string (e.g as part of the verification_uri_complete),
-        // render a form to ask the user to enter the user code manually (non-digit chars are automatically ignored).
-        if (string.IsNullOrEmpty(request.UserCode))
-        {
-            return View(new VerifyViewModel());
-        }
-
-        // Retrieve the claims principal associated with the user code.
-        var result = await HttpContext.AuthenticateAsync(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
-        if (result.Succeeded)
-        {
-            // Retrieve the application details from the database using the client_id stored in the principal.
-            var application = await _applicationManager.FindByClientIdAsync(result.Principal.GetClaim(Claims.ClientId)) ??
-                throw new InvalidOperationException("Details concerning the calling client application cannot be found.");
-
-            // Render a form asking the user to confirm the authorization demand.
-            return View(new VerifyViewModel
-            {
-                ApplicationName = await _applicationManager.GetLocalizedDisplayNameAsync(application),
-                Scope = string.Join(" ", result.Principal.GetScopes()),
-                UserCode = request.UserCode
-            });
-        }
-
-        // Redisplay the form when the user code is not valid.
-        return View(new VerifyViewModel
-        {
-            Error = Errors.InvalidToken,
-            ErrorDescription = "The specified user code is not valid. Please make sure you typed it correctly."
-        });
-    }
-
-    [Authorize, FormValueRequired("submit.Accept")]
-    [HttpPost("~/connect/verify"), ValidateAntiForgeryToken]
-    public async Task<IActionResult> VerifyAccept()
-    {
-        // Retrieve the profile of the logged in user.
-        var user = await _userManager.GetUserAsync(User) ??
-            throw new InvalidOperationException("The user details cannot be retrieved.");
-
-        // Retrieve the claims principal associated with the user code.
-        var result = await HttpContext.AuthenticateAsync(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
-        if (result.Succeeded)
-        {
-            // Create the claims-based identity that will be used by OpenIddict to generate tokens.
-            var identity = new ClaimsIdentity(
-                authenticationType: TokenValidationParameters.DefaultAuthenticationType,
-                nameType: Claims.Name,
-                roleType: Claims.Role);
-
-            // Add the claims that will be persisted in the tokens.
-            identity.AddClaim(Claims.Subject, await _userManager.GetUserIdAsync(user))
-                    .AddClaim(Claims.Email, await _userManager.GetEmailAsync(user))
-                    .AddClaim(Claims.Name, await _userManager.GetUserNameAsync(user))
-                    .AddClaims(Claims.Role, (await _userManager.GetRolesAsync(user)).ToImmutableArray());
-
-            // Note: in this sample, the granted scopes match the requested scope
-            // but you may want to allow the user to uncheck specific scopes.
-            // For that, simply restrict the list of scopes before calling SetScopes.
-            identity.SetScopes(result.Principal.GetScopes());
-            identity.SetResources(await _scopeManager.ListResourcesAsync(identity.GetScopes()).ToListAsync());
-            identity.SetDestinations(GetDestinations);
-
-            var properties = new AuthenticationProperties
-            {
-                // This property points to the address OpenIddict will automatically
-                // redirect the user to after validating the authorization demand.
-                RedirectUri = "/"
-            };
-
-            return SignIn(new ClaimsPrincipal(identity), properties, OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
-        }
-
-        // Redisplay the form when the user code is not valid.
-        return View(new VerifyViewModel
-        {
-            Error = Errors.InvalidToken,
-            ErrorDescription = "The specified user code is not valid. Please make sure you typed it correctly."
-        });
-    }
-
-    [Authorize, FormValueRequired("submit.Deny")]
-    [HttpPost("~/connect/verify"), ValidateAntiForgeryToken]
-    // Notify OpenIddict that the authorization grant has been denied by the resource owner.
-    public IActionResult VerifyDeny() => Forbid(
-        authenticationSchemes: OpenIddictServerAspNetCoreDefaults.AuthenticationScheme,
-        properties: new AuthenticationProperties()
-        {
-            // This property points to the address OpenIddict will automatically
-            // redirect the user to after rejecting the authorization demand.
-            RedirectUri = "/"
-        });
-    #endregion
+    // #region Device flow
+    // // Note: to support the device flow, you must provide your own verification endpoint action:
+    // [Authorize, HttpGet("~/connect/verify"), IgnoreAntiforgeryToken]
+    // public async Task<IActionResult> Verify()
+    // {
+    //     var request = HttpContext.GetOpenIddictServerRequest() ??
+    //         throw new InvalidOperationException("The OpenID Connect request cannot be retrieved.");
+    //
+    //     // If the user code was not specified in the query string (e.g as part of the verification_uri_complete),
+    //     // render a form to ask the user to enter the user code manually (non-digit chars are automatically ignored).
+    //     if (string.IsNullOrEmpty(request.UserCode))
+    //     {
+    //         return View(new VerifyViewModel());
+    //     }
+    //
+    //     // Retrieve the claims principal associated with the user code.
+    //     var result = await HttpContext.AuthenticateAsync(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
+    //     if (result.Succeeded)
+    //     {
+    //         // Retrieve the application details from the database using the client_id stored in the principal.
+    //         var application = await _applicationManager.FindByClientIdAsync(result.Principal.GetClaim(Claims.ClientId)) ??
+    //             throw new InvalidOperationException("Details concerning the calling client application cannot be found.");
+    //
+    //         // Render a form asking the user to confirm the authorization demand.
+    //         return View(new VerifyViewModel
+    //         {
+    //             ApplicationName = await _applicationManager.GetLocalizedDisplayNameAsync(application),
+    //             Scope = string.Join(" ", result.Principal.GetScopes()),
+    //             UserCode = request.UserCode
+    //         });
+    //     }
+    //
+    //     // Redisplay the form when the user code is not valid.
+    //     return View(new VerifyViewModel
+    //     {
+    //         Error = Errors.InvalidToken,
+    //         ErrorDescription = "The specified user code is not valid. Please make sure you typed it correctly."
+    //     });
+    // }
+    //
+    // [Authorize, FormValueRequired("submit.Accept")]
+    // [HttpPost("~/connect/verify"), ValidateAntiForgeryToken]
+    // public async Task<IActionResult> VerifyAccept()
+    // {
+    //     // Retrieve the profile of the logged in user.
+    //     var user = await _userManager.GetUserAsync(User) ??
+    //         throw new InvalidOperationException("The user details cannot be retrieved.");
+    //
+    //     // Retrieve the claims principal associated with the user code.
+    //     var result = await HttpContext.AuthenticateAsync(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
+    //     if (result.Succeeded)
+    //     {
+    //         // Create the claims-based identity that will be used by OpenIddict to generate tokens.
+    //         var identity = new ClaimsIdentity(
+    //             authenticationType: TokenValidationParameters.DefaultAuthenticationType,
+    //             nameType: Claims.Name,
+    //             roleType: Claims.Role);
+    //
+    //         // Add the claims that will be persisted in the tokens.
+    //         identity.AddClaim(Claims.Subject, await _userManager.GetUserIdAsync(user))
+    //                 .AddClaim(Claims.Email, await _userManager.GetEmailAsync(user))
+    //                 .AddClaim(Claims.Name, await _userManager.GetUserNameAsync(user))
+    //                 .AddClaims(Claims.Role, (await _userManager.GetRolesAsync(user)).ToImmutableArray());
+    //
+    //         // Note: in this sample, the granted scopes match the requested scope
+    //         // but you may want to allow the user to uncheck specific scopes.
+    //         // For that, simply restrict the list of scopes before calling SetScopes.
+    //         identity.SetScopes(result.Principal.GetScopes());
+    //         identity.SetResources(await _scopeManager.ListResourcesAsync(identity.GetScopes()).ToListAsync());
+    //         identity.SetDestinations(GetDestinations);
+    //
+    //         var properties = new AuthenticationProperties
+    //         {
+    //             // This property points to the address OpenIddict will automatically
+    //             // redirect the user to after validating the authorization demand.
+    //             RedirectUri = "/"
+    //         };
+    //
+    //         return SignIn(new ClaimsPrincipal(identity), properties, OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
+    //     }
+    //
+    //     // Redisplay the form when the user code is not valid.
+    //     return View(new VerifyViewModel
+    //     {
+    //         Error = Errors.InvalidToken,
+    //         ErrorDescription = "The specified user code is not valid. Please make sure you typed it correctly."
+    //     });
+    // }
+    //
+    // [Authorize, FormValueRequired("submit.Deny")]
+    // [HttpPost("~/connect/verify"), ValidateAntiForgeryToken]
+    // // Notify OpenIddict that the authorization grant has been denied by the resource owner.
+    // public IActionResult VerifyDeny() => Forbid(
+    //     authenticationSchemes: OpenIddictServerAspNetCoreDefaults.AuthenticationScheme,
+    //     properties: new AuthenticationProperties()
+    //     {
+    //         // This property points to the address OpenIddict will automatically
+    //         // redirect the user to after rejecting the authorization demand.
+    //         RedirectUri = "/"
+    //     });
+    // #endregion
 
     #region Logout support for interactive flows like code and implicit
     // Note: the logout action is only useful when implementing interactive

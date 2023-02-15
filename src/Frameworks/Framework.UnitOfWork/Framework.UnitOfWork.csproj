@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Framework.Buses\Framework.Buses.csproj" />
       <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj" />
     </ItemGroup>
 

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="MassTransit.Abstractions">
+        <HintPath>..\..\..\..\..\..\..\..\..\..\home\morteza\.nuget\packages\masstransit.abstractions\8.0.6\lib\net6.0\MassTransit.Abstractions.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Domains\ProductManagement.Domains\ProductManagement.Domains.csproj" />
+      <ProjectReference Include="..\ProductManagement.Commands\ProductManagement.Commands.csproj" />
+    </ItemGroup>
+
+</Project>

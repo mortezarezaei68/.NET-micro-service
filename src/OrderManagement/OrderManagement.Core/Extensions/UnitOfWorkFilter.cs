@@ -1,5 +1,4 @@
-using Framework.Domain.UnitOfWork;
-using Framework.Exception.Exceptions.Enum;
+using Framework.UnitOfWork.UnitOfWork;
 using MassTransit;
 
 namespace OrderManagement.Core.Extensions;
