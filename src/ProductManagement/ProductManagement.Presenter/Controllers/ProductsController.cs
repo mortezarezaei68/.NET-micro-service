@@ -1,7 +1,9 @@
 using Framework.Controller.Extensions;
+using Mapster;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using ProductManagement.Core.HandlerCommands;
+using ProductManagement.Presenter.ViewModels;
 
 namespace ProductManagement.Presenter.Controllers;
 
@@ -22,11 +24,11 @@ public class ProductsController:BaseControllerV1
         await _publishEndpoint.Publish(command, cancellationToken);
         return Ok();
     }
-    [HttpPut("product-details/{id}")]
+    [HttpPut("{id}/product-details")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IActionResult> CreateProductDetailAsync( string id,CreateProductDetailCommandRequest command,CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateProductDetailAsync( string id,[FromBody] CreateProductDetailModel request,CancellationToken cancellationToken)
     {
-        await _publishEndpoint.Publish(command, cancellationToken);
+        await _publishEndpoint.Publish((id,request).Adapt<CreateProductDetailCommandRequest>(), cancellationToken);
         return Ok();
     }
 }

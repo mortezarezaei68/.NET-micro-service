@@ -24,8 +24,7 @@ builder.Services.AddTransient(typeof(UnitOfWork<>));
 builder.Services.AddScoped<IUnitOfWork,UnitOfWork<ProductDbContext>>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddMasstransitConsumerProducerExtension<ProductDbContext>(builder.Configuration, nameof(ProductManagement.Core));
-
-
+builder.Services.AddCustomMapster();
 
 Logs.ConfigureLogging();
 builder.Host.UseSerilog();
