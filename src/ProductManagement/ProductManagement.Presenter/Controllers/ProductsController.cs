@@ -7,8 +7,7 @@ using ProductManagement.Presenter.ViewModels;
 
 namespace ProductManagement.Presenter.Controllers;
 
-
-public class ProductsController:BaseControllerV1
+public class ProductsController : BaseControllerV1
 {
     private readonly IBus _publishEndpoint;
 
@@ -19,16 +18,19 @@ public class ProductsController:BaseControllerV1
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IActionResult> CreateAsync(CreateProductCommandRequest command,CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateAsync(CreateProductCommandRequest command,
+        CancellationToken cancellationToken)
     {
         await _publishEndpoint.Publish(command, cancellationToken);
         return Ok();
     }
-    [HttpPut("{id}/product-details")]
+
+    [HttpPut("{id}/details")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IActionResult> CreateProductDetailAsync( string id,[FromBody] CreateProductDetailModel request,CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateProductDetailAsync(string id, [FromBody] CreateProductDetailModel request,
+        CancellationToken cancellationToken)
     {
-        await _publishEndpoint.Publish((id,request).Adapt<CreateProductDetailCommandRequest>(), cancellationToken);
+        await _publishEndpoint.Publish((id, request).Adapt<CreateProductDetailCommandRequest>(), cancellationToken);
         return Ok();
     }
 }
